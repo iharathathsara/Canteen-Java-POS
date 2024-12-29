@@ -1,0 +1,154 @@
+26-12-2024 13:17:25 INFO  Login:30: INFO:: run login
+26-12-2024 13:17:47 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+26-12-2024 13:17:48 INFO  Home:136: INFO:: search Stock
+26-12-2024 13:17:49 INFO  Home:136: INFO:: search Stock
+26-12-2024 13:17:49 INFO  Home:136: INFO:: search Stock
+26-12-2024 13:17:49 INFO  Home:136: INFO:: search Stock
+26-12-2024 13:17:49 INFO  Home:136: INFO:: search Stock
+26-12-2024 13:17:49 INFO  Home:136: INFO:: search Stock
+26-12-2024 13:17:49 INFO  Home:136: INFO:: search Stock
+26-12-2024 13:17:50 INFO  Home:136: INFO:: search Stock
+26-12-2024 13:17:50 INFO  Home:66: INFO:: run home
+26-12-2024 13:17:50 INFO  Home:98: INFO:: get logged user data success
+26-12-2024 13:18:05 INFO  Home:714: INFO:: User Manage load Users Types
+26-12-2024 13:18:05 INFO  Home:731: INFO:: User Manage load Users Types search Combobox
+26-12-2024 13:18:05 INFO  Home:748: INFO:: User Manage load Users Status search Combobox
+26-12-2024 13:18:05 INFO  Home:665: INFO:: User Manage load Users Table
+26-12-2024 13:18:07 INFO  Home:508: INFO:: Load Supplier Table GRN
+26-12-2024 13:18:07 INFO  Home:487: INFO:: Load Products Table GRN
+26-12-2024 13:18:07 INFO  Home:453: INFO:: Load Brand ComboBox GRN
+26-12-2024 13:18:07 INFO  Home:470: INFO:: Load Category ComboBox GRN
+26-12-2024 13:18:07 INFO  Home:436: INFO:: Load Payment Type ComboBox GRN
+26-12-2024 13:18:11 INFO  Home:576: INFO:: My Profile load details
+26-12-2024 13:18:13 INFO  Home:109: INFO:: load Stock
+26-12-2024 13:18:13 INFO  Home:322: INFO:: Load Brand Combo Box Stock
+26-12-2024 13:18:13 INFO  Home:339: INFO:: Load Category Combo Box Stock
+26-12-2024 13:18:13 INFO  Home:292: INFO:: Load Stock Table
+26-12-2024 13:18:15 INFO  Home:830: INFO:: Invoice load category combo box
+26-12-2024 13:18:15 INFO  Home:847: INFO:: Invoice load product table
+26-12-2024 13:18:15 INFO  Home:807: INFO:: Invoice load payment types
+26-12-2024 13:18:34 INFO  Home:136: INFO:: search Stock
+26-12-2024 13:18:34 INFO  Home:136: INFO:: search Stock
+26-12-2024 13:18:34 INFO  Home:136: INFO:: search Stock
+26-12-2024 13:18:34 INFO  Home:136: INFO:: search Stock
+26-12-2024 13:21:36 INFO  Home:714: INFO:: User Manage load Users Types
+26-12-2024 13:21:36 INFO  Home:731: INFO:: User Manage load Users Types search Combobox
+26-12-2024 13:21:36 INFO  Home:748: INFO:: User Manage load Users Status search Combobox
+26-12-2024 13:21:36 INFO  Home:665: INFO:: User Manage load Users Table
+26-12-2024 13:31:19 INFO  Home:665: INFO:: User Manage load Users Table
+26-12-2024 13:31:19 INFO  Home:704: INFO:: User Manage clear
+26-12-2024 13:31:30 INFO  Home:704: INFO:: User Manage clear
+26-12-2024 13:35:21 INFO  Login:30: INFO:: run login
+26-12-2024 13:35:37 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+26-12-2024 13:35:37 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:35:37 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:35:37 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:35:37 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:35:37 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:35:37 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:35:37 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:35:37 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:35:37 INFO  Home:67: INFO:: run home
+26-12-2024 13:35:37 INFO  Home:100: INFO:: get logged user data success
+26-12-2024 13:35:39 INFO  Home:716: INFO:: User Manage load Users Types
+26-12-2024 13:35:39 INFO  Home:733: INFO:: User Manage load Users Types search Combobox
+26-12-2024 13:35:39 INFO  Home:750: INFO:: User Manage load Users Status search Combobox
+26-12-2024 13:35:39 INFO  Home:667: INFO:: User Manage load Users Table
+26-12-2024 13:35:47 INFO  Home:667: INFO:: User Manage load Users Table
+26-12-2024 13:35:47 INFO  Home:4841: INFO:: change User status, user_id = 4
+26-12-2024 13:35:55 INFO  Home:667: INFO:: User Manage load Users Table
+26-12-2024 13:35:55 INFO  Home:706: INFO:: User Manage clear
+26-12-2024 13:37:35 INFO  Home:706: INFO:: User Manage clear
+26-12-2024 13:37:35 INFO  Home:667: INFO:: User Manage load Users Table
+26-12-2024 13:37:35 INFO  Home:4588: INFO:: save new user iniq id = U_1735200454221984 , email = abc@gmail.com
+26-12-2024 13:37:43 INFO  Login:30: INFO:: run login
+26-12-2024 13:38:00 INFO  Login:244: INFO:: login success email:abc@gmail.com
+26-12-2024 13:38:00 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:38:00 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:38:00 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:38:00 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:38:00 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:38:00 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:38:00 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:38:00 INFO  Home:138: INFO:: search Stock
+26-12-2024 13:38:00 INFO  Home:67: INFO:: run home
+26-12-2024 13:38:00 INFO  Home:100: INFO:: get logged user data success
+26-12-2024 13:38:02 INFO  Home:716: INFO:: User Manage load Users Types
+26-12-2024 13:38:02 INFO  Home:733: INFO:: User Manage load Users Types search Combobox
+26-12-2024 13:38:02 INFO  Home:750: INFO:: User Manage load Users Status search Combobox
+26-12-2024 13:38:02 INFO  Home:667: INFO:: User Manage load Users Table
+26-12-2024 13:38:17 INFO  Home:667: INFO:: User Manage load Users Table
+26-12-2024 13:38:17 INFO  Home:706: INFO:: User Manage clear
+26-12-2024 13:38:32 INFO  Home:578: INFO:: My Profile load details
+26-12-2024 13:38:46 INFO  Home:578: INFO:: My Profile load details
+26-12-2024 13:38:46 INFO  Home:4896: INFO:: update my profile
+26-12-2024 13:38:52 INFO  Home:578: INFO:: My Profile load details
+26-12-2024 13:59:32 INFO  Login:30: INFO:: run login
+26-12-2024 13:59:48 INFO  Login:244: INFO:: login success email:abc@gmail.com
+26-12-2024 13:59:48 INFO  Home:153: INFO:: search Stock
+26-12-2024 13:59:48 INFO  Home:153: INFO:: search Stock
+26-12-2024 13:59:48 INFO  Home:153: INFO:: search Stock
+26-12-2024 13:59:48 INFO  Home:153: INFO:: search Stock
+26-12-2024 13:59:48 INFO  Home:153: INFO:: search Stock
+26-12-2024 13:59:48 INFO  Home:153: INFO:: search Stock
+26-12-2024 13:59:48 INFO  Home:153: INFO:: search Stock
+26-12-2024 13:59:48 INFO  Home:153: INFO:: search Stock
+26-12-2024 13:59:48 INFO  Home:67: INFO:: run home
+26-12-2024 13:59:48 INFO  Home:101: INFO:: get logged user data success
+26-12-2024 13:59:58 INFO  Home:731: INFO:: User Manage load Users Types
+26-12-2024 13:59:58 INFO  Home:748: INFO:: User Manage load Users Types search Combobox
+26-12-2024 13:59:58 INFO  Home:765: INFO:: User Manage load Users Status search Combobox
+26-12-2024 13:59:58 INFO  Home:682: INFO:: User Manage load Users Table
+26-12-2024 14:00:06 INFO  Home:721: INFO:: User Manage clear
+26-12-2024 14:00:10 INFO  Home:631: INFO:: User Manage search
+26-12-2024 14:00:10 INFO  Home:631: INFO:: User Manage search
+26-12-2024 14:00:14 INFO  Home:631: INFO:: User Manage search
+26-12-2024 14:00:14 INFO  Home:631: INFO:: User Manage search
+26-12-2024 14:00:21 INFO  Home:593: INFO:: My Profile load details
+26-12-2024 14:00:24 INFO  Home:126: INFO:: load Stock
+26-12-2024 14:00:24 INFO  Home:339: INFO:: Load Brand Combo Box Stock
+26-12-2024 14:00:24 INFO  Home:356: INFO:: Load Category Combo Box Stock
+26-12-2024 14:00:24 INFO  Home:309: INFO:: Load Stock Table
+26-12-2024 14:00:36 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:00:36 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:00:38 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:00:38 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:00:40 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:00:40 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:00:45 INFO  Home:5990: INFO:: print stock 
+26-12-2024 14:01:13 INFO  Home:847: INFO:: Invoice load category combo box
+26-12-2024 14:01:13 INFO  Home:864: INFO:: Invoice load product table
+26-12-2024 14:01:13 INFO  Home:824: INFO:: Invoice load payment types
+26-12-2024 14:01:18 INFO  Home:847: INFO:: Invoice load category combo box
+26-12-2024 14:01:18 INFO  Home:864: INFO:: Invoice load product table
+26-12-2024 14:01:18 INFO  Home:824: INFO:: Invoice load payment types
+26-12-2024 14:01:24 INFO  Home:5502: INFO:: invoice, add product to cart
+26-12-2024 14:01:25 INFO  Home:864: INFO:: Invoice load product table
+26-12-2024 14:01:46 INFO  Login:30: INFO:: run login
+26-12-2024 14:01:46 INFO  Home:6296: INFO:: log out success
+26-12-2024 14:01:46 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:01:46 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:01:46 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:01:46 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:02:02 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+26-12-2024 14:02:02 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:02:02 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:02:02 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:02:02 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:02:02 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:02:02 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:02:02 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:02:02 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:02:02 INFO  Home:67: INFO:: run home
+26-12-2024 14:02:02 INFO  Home:101: INFO:: get logged user data success
+26-12-2024 14:02:04 INFO  Home:525: INFO:: Load Supplier Table GRN
+26-12-2024 14:02:04 INFO  Home:504: INFO:: Load Products Table GRN
+26-12-2024 14:02:04 INFO  Home:470: INFO:: Load Brand ComboBox GRN
+26-12-2024 14:02:04 INFO  Home:487: INFO:: Load Category ComboBox GRN
+26-12-2024 14:02:04 INFO  Home:453: INFO:: Load Payment Type ComboBox GRN
+26-12-2024 14:02:10 INFO  Login:30: INFO:: run login
+26-12-2024 14:02:10 INFO  Home:6296: INFO:: log out success
+26-12-2024 14:02:10 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:02:10 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:02:10 INFO  Home:153: INFO:: search Stock
+26-12-2024 14:02:10 INFO  Home:153: INFO:: search Stock

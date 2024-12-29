@@ -1,0 +1,48 @@
+07-12-2024 12:10:21 INFO  Login:30: INFO:: run login
+07-12-2024 12:12:39 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+07-12-2024 12:12:45 INFO  Home:64: INFO:: run home
+07-12-2024 12:12:45 INFO  Home:530: INFO:: get logged user data success
+07-12-2024 12:13:21 INFO  Login:30: INFO:: run login
+07-12-2024 12:13:39 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+07-12-2024 12:13:41 INFO  Home:64: INFO:: run home
+07-12-2024 12:13:41 INFO  Home:530: INFO:: get logged user data success
+07-12-2024 12:24:44 INFO  Login:30: INFO:: run login
+07-12-2024 12:25:03 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+07-12-2024 12:25:05 INFO  Home:64: INFO:: run home
+07-12-2024 12:25:05 INFO  Home:530: INFO:: get logged user data success
+07-12-2024 12:32:24 INFO  Login:30: INFO:: run login
+07-12-2024 12:32:46 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+07-12-2024 12:32:49 INFO  Home:64: INFO:: run home
+07-12-2024 12:32:49 INFO  Home:530: INFO:: get logged user data success
+07-12-2024 15:00:59 INFO  Login:30: INFO:: run login
+07-12-2024 15:01:22 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+07-12-2024 15:01:24 INFO  Home:64: INFO:: run home
+07-12-2024 15:01:24 INFO  Home:530: INFO:: get logged user data success
+07-12-2024 15:05:51 INFO  Login:30: INFO:: run login
+07-12-2024 15:08:31 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+07-12-2024 15:08:32 INFO  Home:64: INFO:: run home
+07-12-2024 15:08:32 INFO  Home:535: INFO:: get logged user data success
+07-12-2024 15:10:12 INFO  Login:30: INFO:: run login
+07-12-2024 15:10:31 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+07-12-2024 15:10:32 INFO  Home:64: INFO:: run home
+07-12-2024 15:10:32 INFO  Home:535: INFO:: get logged user data success
+07-12-2024 15:17:04 INFO  Login:30: INFO:: run login
+07-12-2024 15:17:27 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+07-12-2024 15:17:27 INFO  Home:64: INFO:: run home
+07-12-2024 15:17:27 INFO  Home:539: INFO:: get logged user data success
+07-12-2024 15:23:49 INFO  Login:30: INFO:: run login
+07-12-2024 15:24:12 INFO  Login:244: INFO:: login success email:IHARA@GMAIL.COM
+07-12-2024 15:24:12 INFO  Home:64: INFO:: run home
+07-12-2024 15:24:12 INFO  Home:542: INFO:: get logged user data success
+07-12-2024 15:27:42 INFO  Login:30: INFO:: run login
+07-12-2024 15:28:07 INFO  Login:244: INFO:: login success email:IHARA@GMAIL.COM
+07-12-2024 15:28:08 INFO  Home:64: INFO:: run home
+07-12-2024 15:28:08 INFO  Home:545: INFO:: get logged user data success
+07-12-2024 15:37:11 INFO  Login:30: INFO:: run login
+07-12-2024 15:37:28 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+07-12-2024 15:37:28 INFO  Home:64: INFO:: run home
+07-12-2024 15:37:28 INFO  Home:545: INFO:: get logged user data success
+07-12-2024 19:56:04 INFO  Login:30: INFO:: run login
+07-12-2024 19:56:28 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+07-12-2024 19:56:33 INFO  Home:64: INFO:: run home
+07-12-2024 19:56:33 INFO  Home:545: INFO:: get logged user data success

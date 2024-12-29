@@ -1,0 +1,26 @@
+13-09-2024 00:41:40 INFO  Login:30: INFO:: run login
+13-09-2024 00:46:26 INFO  Login:30: INFO:: run login
+13-09-2024 00:49:58 INFO  Login:30: INFO:: run login
+13-09-2024 00:51:07 INFO  Login:30: INFO:: run login
+13-09-2024 00:51:38 INFO  Login:30: INFO:: run login
+13-09-2024 00:52:28 INFO  Login:30: INFO:: run login
+13-09-2024 00:53:25 INFO  Login:30: INFO:: run login
+13-09-2024 00:54:57 INFO  Login:30: INFO:: run login
+13-09-2024 00:59:15 INFO  Login:30: INFO:: run login
+13-09-2024 01:00:23 INFO  Login:30: INFO:: run login
+13-09-2024 01:01:11 INFO  Login:30: INFO:: run login
+13-09-2024 01:04:35 INFO  Login:30: INFO:: run login
+13-09-2024 01:05:34 INFO  Login:30: INFO:: run login
+13-09-2024 01:05:59 WARN  Login:251: WARNING:: Invalid login email:IHARA@GMAIL.COM
+13-09-2024 01:06:09 INFO  Login:244: INFO:: login success email:IHARA@GMAIL.COM
+13-09-2024 01:06:11 INFO  Home:56: INFO:: run home
+13-09-2024 01:06:11 INFO  Home:510: INFO:: get logged user data success
+13-09-2024 01:07:46 INFO  Login:30: INFO:: run login
+13-09-2024 01:08:19 WARN  Login:251: WARNING:: Invalid login email:IHARA@GMAIL.COM
+13-09-2024 01:08:24 INFO  Login:244: INFO:: login success email:IHARA@GMAIL.COM
+13-09-2024 01:08:26 INFO  Home:56: INFO:: run home
+13-09-2024 01:08:26 INFO  Home:510: INFO:: get logged user data success
+13-09-2024 12:36:49 INFO  Login:30: INFO:: run login
+13-09-2024 12:43:54 INFO  Login:244: INFO:: login success email:IHARA@GMAIL.COM
+13-09-2024 12:43:57 INFO  Home:56: INFO:: run home
+13-09-2024 12:43:57 INFO  Home:510: INFO:: get logged user data success

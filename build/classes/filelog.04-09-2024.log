@@ -1,0 +1,6 @@
+04-09-2024 12:21:24 INFO  Login:31: INFO:: run login
+04-09-2024 12:21:44 WARN  Login:232: WARNING:: Invalid login email:ihara@gmail.com
+04-09-2024 12:21:50 WARN  Login:232: WARNING:: Invalid login email:ihara@gmail.com
+04-09-2024 12:21:54 INFO  Login:225: INFO:: login success email:ihara@gmail.com
+04-09-2024 12:21:56 INFO  Home:56: INFO:: run home
+04-09-2024 12:21:56 INFO  Home:510: INFO:: get logged user data success

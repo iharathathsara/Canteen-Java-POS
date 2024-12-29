@@ -1,0 +1,4 @@
+20-10-2024 20:25:58 INFO  Login:30: INFO:: run login
+20-10-2024 20:26:27 INFO  Login:244: INFO:: login success email:ihara@gmail.com
+20-10-2024 20:26:29 INFO  Home:56: INFO:: run home
+20-10-2024 20:26:29 INFO  Home:510: INFO:: get logged user data success
