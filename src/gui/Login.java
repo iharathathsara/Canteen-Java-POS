@@ -5,6 +5,7 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 import log.Log;
@@ -25,6 +26,8 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
+        
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/image/canteen.png")));
 
 //        LOG.debug("DEBUG:: debug test");
         LOG.info("INFO:: run login");
@@ -32,6 +35,7 @@ public class Login extends javax.swing.JFrame {
 //        LOG.warn("WARNING:: debug test");
 //        LOG.fatal("FATAL:: debug test");
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,10 +69,12 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setText("LOG IN");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 19, 400, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Enter User Email");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 100, 330, -1));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Enter Password");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 330, -1));
@@ -88,7 +94,7 @@ public class Login extends javax.swing.JFrame {
         jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 330, -1));
 
         jButton1.setBackground(new java.awt.Color(40, 167, 69));
-        jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         jButton1.setForeground(new java.awt.Color(233, 236, 239));
         jButton1.setText("Log In");
         jButton1.setContentAreaFilled(false);

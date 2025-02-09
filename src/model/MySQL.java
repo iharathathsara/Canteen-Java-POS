@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -57,5 +59,32 @@ public class MySQL {
             e.printStackTrace();
         }
         return connection;
+    }
+    
+    public static boolean backupDatabase() {
+        // Get the Downloads folder path
+        String userHome = System.getProperty("user.home");
+        String downloadFolder = userHome + File.separator + "Downloads";
+        String backupFilePath = downloadFolder + File.separator + "canteen_db_backup.sql";
+
+        // Construct the mysqldump command
+        String command = String.format("mysqldump -u%s -p%s %s -r %s", USERNAME, PASSWORD, DATABASE, backupFilePath);
+
+        try {
+            // Execute the command
+            Process process = Runtime.getRuntime().exec(command);
+
+            // Wait for the process to complete
+            int processComplete = process.waitFor();
+
+            if (processComplete == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

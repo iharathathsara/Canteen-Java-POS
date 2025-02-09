@@ -1,0 +1,84 @@
+08-02-2025 15:09:53 INFO  Login:33: INFO:: run login
+08-02-2025 15:11:38 INFO  Login:250: INFO:: login success email:ihara@gmail.com
+08-02-2025 15:11:39 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:11:39 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:11:39 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:11:39 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:11:39 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:11:39 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:11:39 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:11:39 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:11:39 INFO  Home:70: INFO:: run home
+08-02-2025 15:11:40 INFO  Home:106: INFO:: get logged user data success
+08-02-2025 15:11:42 INFO  Home:852: INFO:: Invoice load category combo box
+08-02-2025 15:11:42 INFO  Home:869: INFO:: Invoice load product table
+08-02-2025 15:11:42 INFO  Home:829: INFO:: Invoice load payment types
+08-02-2025 15:13:08 INFO  Login:33: INFO:: run login
+08-02-2025 15:13:23 INFO  Login:250: INFO:: login success email:ihara@gmail.com
+08-02-2025 15:13:24 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:13:24 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:13:24 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:13:24 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:13:24 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:13:24 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:13:24 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:13:24 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:13:24 INFO  Home:70: INFO:: run home
+08-02-2025 15:13:24 INFO  Home:106: INFO:: get logged user data success
+08-02-2025 15:13:25 INFO  Home:852: INFO:: Invoice load category combo box
+08-02-2025 15:13:25 INFO  Home:869: INFO:: Invoice load product table
+08-02-2025 15:13:25 INFO  Home:829: INFO:: Invoice load payment types
+08-02-2025 15:17:04 INFO  Login:33: INFO:: run login
+08-02-2025 15:17:23 INFO  Login:250: INFO:: login success email:ihara@gmail.com
+08-02-2025 15:17:23 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:23 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:23 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:23 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:23 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:23 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:23 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:23 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:24 INFO  Home:70: INFO:: run home
+08-02-2025 15:17:24 INFO  Home:106: INFO:: get logged user data success
+08-02-2025 15:17:25 INFO  Home:852: INFO:: Invoice load category combo box
+08-02-2025 15:17:25 INFO  Home:869: INFO:: Invoice load product table
+08-02-2025 15:17:25 INFO  Home:829: INFO:: Invoice load payment types
+08-02-2025 15:17:56 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:57 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:57 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:57 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:57 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:57 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:57 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:57 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:17:58 INFO  Home:70: INFO:: run home
+08-02-2025 15:17:58 ERROR Home:123: ERROR:: get logged user data error
+08-02-2025 15:17:59 INFO  Home:852: INFO:: Invoice load category combo box
+08-02-2025 15:17:59 INFO  Home:869: INFO:: Invoice load product table
+08-02-2025 15:17:59 INFO  Home:829: INFO:: Invoice load payment types
+08-02-2025 15:18:45 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:18:46 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:18:46 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:18:46 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:18:46 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:18:46 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:18:46 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:18:46 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:18:47 INFO  Home:70: INFO:: run home
+08-02-2025 15:18:47 ERROR Home:123: ERROR:: get logged user data error
+08-02-2025 15:18:48 INFO  Home:852: INFO:: Invoice load category combo box
+08-02-2025 15:18:48 INFO  Home:869: INFO:: Invoice load product table
+08-02-2025 15:18:48 INFO  Home:829: INFO:: Invoice load payment types
+08-02-2025 15:20:17 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:20:18 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:20:18 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:20:18 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:20:18 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:20:18 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:20:18 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:20:18 INFO  Home:158: INFO:: search Stock
+08-02-2025 15:20:18 INFO  Home:70: INFO:: run home
+08-02-2025 15:20:18 ERROR Home:123: ERROR:: get logged user data error
+08-02-2025 15:20:20 INFO  Home:852: INFO:: Invoice load category combo box
+08-02-2025 15:20:20 INFO  Home:869: INFO:: Invoice load product table
+08-02-2025 15:20:20 INFO  Home:829: INFO:: Invoice load payment types
