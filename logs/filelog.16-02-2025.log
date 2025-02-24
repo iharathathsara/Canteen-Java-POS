@@ -1,0 +1,138 @@
+16-02-2025 07:31:42 INFO  Login:33: INFO:: run login
+16-02-2025 07:32:25 INFO  Login:33: INFO:: run login
+16-02-2025 07:32:40 INFO  Login:250: INFO:: login success email:ihara@gmail.com
+16-02-2025 07:32:41 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:32:41 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:32:41 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:32:41 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:32:41 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:32:41 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:32:41 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:32:41 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:32:41 INFO  Home:70: INFO:: run home
+16-02-2025 07:32:41 INFO  Home:106: INFO:: get logged user data success
+16-02-2025 07:32:43 INFO  Home:530: INFO:: Load Supplier Table GRN
+16-02-2025 07:32:43 INFO  Home:509: INFO:: Load Products Table GRN
+16-02-2025 07:32:43 INFO  Home:475: INFO:: Load Brand ComboBox GRN
+16-02-2025 07:32:43 INFO  Home:492: INFO:: Load Category ComboBox GRN
+16-02-2025 07:32:43 INFO  Home:458: INFO:: Load Payment Type ComboBox GRN
+16-02-2025 07:35:08 INFO  Home:416: INFO:: Search Products Table GRN
+16-02-2025 07:35:08 INFO  Home:416: INFO:: Search Products Table GRN
+16-02-2025 07:35:31 INFO  Home:416: INFO:: Search Products Table GRN
+16-02-2025 07:35:31 INFO  Home:416: INFO:: Search Products Table GRN
+16-02-2025 07:35:31 INFO  Home:401: INFO:: Reset Fields GRN
+16-02-2025 07:35:42 INFO  Home:578: INFO:: GRN Calculate Balance
+16-02-2025 07:35:45 INFO  Home:5300: INFO:: add new grn 
+16-02-2025 07:35:46 INFO  Home:401: INFO:: Reset Fields GRN
+16-02-2025 07:35:46 INFO  Home:530: INFO:: Load Supplier Table GRN
+16-02-2025 07:35:46 INFO  Home:509: INFO:: Load Products Table GRN
+16-02-2025 07:35:46 INFO  Home:475: INFO:: Load Brand ComboBox GRN
+16-02-2025 07:35:46 INFO  Home:492: INFO:: Load Category ComboBox GRN
+16-02-2025 07:35:46 INFO  Home:458: INFO:: Load Payment Type ComboBox GRN
+16-02-2025 07:40:10 INFO  Login:33: INFO:: run login
+16-02-2025 07:40:34 WARN  Login:257: WARNING:: Invalid login email:ihara@gmmail.com
+16-02-2025 07:40:43 INFO  Login:250: INFO:: login success email:ihara@gmail.com
+16-02-2025 07:40:44 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:40:44 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:40:44 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:40:44 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:40:44 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:40:44 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:40:44 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:40:44 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:40:44 INFO  Home:70: INFO:: run home
+16-02-2025 07:40:44 INFO  Home:106: INFO:: get logged user data success
+16-02-2025 07:40:46 INFO  Home:852: INFO:: Invoice load category combo box
+16-02-2025 07:40:46 INFO  Home:869: INFO:: Invoice load product table
+16-02-2025 07:40:46 INFO  Home:829: INFO:: Invoice load payment types
+16-02-2025 07:41:45 INFO  Home:852: INFO:: Invoice load category combo box
+16-02-2025 07:41:45 INFO  Home:869: INFO:: Invoice load product table
+16-02-2025 07:41:45 INFO  Home:829: INFO:: Invoice load payment types
+16-02-2025 07:41:56 INFO  Home:5575: INFO:: invoice, add product to cart
+16-02-2025 07:41:58 INFO  Home:869: INFO:: Invoice load product table
+16-02-2025 07:41:58 INFO  Home:869: INFO:: Invoice load product table
+16-02-2025 07:41:58 INFO  Home:869: INFO:: Invoice load product table
+16-02-2025 07:42:05 INFO  Home:824: INFO:: Invoice calculate balance
+16-02-2025 07:42:10 INFO  Home:5672: INFO:: add new invoice
+16-02-2025 07:42:15 INFO  Home:5698: INFO:: invoice printed.
+16-02-2025 07:42:16 INFO  Home:852: INFO:: Invoice load category combo box
+16-02-2025 07:42:16 INFO  Home:869: INFO:: Invoice load product table
+16-02-2025 07:42:16 INFO  Home:829: INFO:: Invoice load payment types
+16-02-2025 07:42:16 INFO  Home:806: INFO:: Invoice reset panel
+16-02-2025 07:46:42 INFO  Home:131: INFO:: load Stock
+16-02-2025 07:46:42 INFO  Home:344: INFO:: Load Brand Combo Box Stock
+16-02-2025 07:46:42 INFO  Home:361: INFO:: Load Category Combo Box Stock
+16-02-2025 07:46:42 INFO  Home:314: INFO:: Load Stock Table
+16-02-2025 07:51:19 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:51:20 ERROR Home:306: ERROR:: Search Stock : java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY `product`.`title` ASC' at line 1
+16-02-2025 07:51:20 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:51:20 ERROR Home:306: ERROR:: Search Stock : java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY `product`.`title` ASC' at line 1
+16-02-2025 07:51:20 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:51:20 ERROR Home:306: ERROR:: Search Stock : java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY `product`.`title` ASC' at line 1
+16-02-2025 07:51:20 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:51:20 ERROR Home:306: ERROR:: Search Stock : java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY `product`.`title` ASC' at line 1
+16-02-2025 07:51:20 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:51:20 ERROR Home:306: ERROR:: Search Stock : java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY `product`.`title` ASC' at line 1
+16-02-2025 07:51:20 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:51:20 ERROR Home:306: ERROR:: Search Stock : java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY `product`.`title` ASC' at line 1
+16-02-2025 07:51:20 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:51:20 ERROR Home:306: ERROR:: Search Stock : java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY `product`.`title` ASC' at line 1
+16-02-2025 07:51:20 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:51:21 ERROR Home:306: ERROR:: Search Stock : java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY `product`.`title` ASC' at line 1
+16-02-2025 07:51:22 INFO  Home:70: INFO:: run home
+16-02-2025 07:51:22 ERROR Home:123: ERROR:: get logged user data error
+16-02-2025 07:52:03 INFO  Home:131: INFO:: load Stock
+16-02-2025 07:52:03 INFO  Home:347: INFO:: Load Brand Combo Box Stock
+16-02-2025 07:52:03 INFO  Home:364: INFO:: Load Category Combo Box Stock
+16-02-2025 07:52:03 INFO  Home:317: INFO:: Load Stock Table
+16-02-2025 07:52:03 ERROR Home:341: ERROR:: Load Stock Table java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY `product`.`title` ASC' at line 1
+16-02-2025 07:55:07 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:07 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:07 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:07 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:08 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:08 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:08 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:08 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:08 INFO  Home:70: INFO:: run home
+16-02-2025 07:55:08 ERROR Home:123: ERROR:: get logged user data error
+16-02-2025 07:55:09 INFO  Home:131: INFO:: load Stock
+16-02-2025 07:55:09 INFO  Home:351: INFO:: Load Brand Combo Box Stock
+16-02-2025 07:55:09 INFO  Home:368: INFO:: Load Category Combo Box Stock
+16-02-2025 07:55:09 INFO  Home:321: INFO:: Load Stock Table
+16-02-2025 07:55:14 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:14 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:18 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:18 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:52 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:53 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:54 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:56 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:56 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:57 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:57 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:55:59 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:00 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:00 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:01 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:03 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:03 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:04 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:04 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:14 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:14 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:16 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:16 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:17 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:17 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:19 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:19 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:28 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:37 INFO  Home:139: INFO:: reset Stock
+16-02-2025 07:56:37 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:37 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:37 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:37 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:37 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:37 INFO  Home:158: INFO:: search Stock
+16-02-2025 07:56:37 INFO  Home:321: INFO:: Load Stock Table

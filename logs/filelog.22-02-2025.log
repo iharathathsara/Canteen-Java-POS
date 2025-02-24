@@ -1,0 +1,48 @@
+22-02-2025 01:01:40 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:01:41 ERROR Home:308: ERROR:: Search Stock : java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:41 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:01:42 ERROR Home:308: ERROR:: Search Stock : java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:42 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:01:42 ERROR Home:308: ERROR:: Search Stock : java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:42 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:01:43 ERROR Home:308: ERROR:: Search Stock : java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:44 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:01:44 ERROR Home:308: ERROR:: Search Stock : java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:44 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:01:44 ERROR Home:308: ERROR:: Search Stock : java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:44 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:01:44 ERROR Home:308: ERROR:: Search Stock : java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:44 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:01:44 ERROR Home:308: ERROR:: Search Stock : java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:46 INFO  Home:71: INFO:: run home
+22-02-2025 01:01:46 ERROR Home:121: ERROR:: get logged user data error
+22-02-2025 01:01:48 INFO  Home:857: INFO:: Invoice load category combo box
+22-02-2025 01:01:48 ERROR Home:868: ERROR:: Invoice load category combo box java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:48 INFO  Home:874: INFO:: Invoice load product table
+22-02-2025 01:01:48 ERROR Home:892: ERROR:: Invoice load product table java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:48 INFO  Home:834: INFO:: Invoice load payment types
+22-02-2025 01:01:48 ERROR Home:845: ERROR:: Invoice load payment types java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:56 INFO  Home:741: INFO:: User Manage load Users Types
+22-02-2025 01:01:56 ERROR Home:752: ERROR:: User Manage load Users Types java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:56 INFO  Home:758: INFO:: User Manage load Users Types search Combobox
+22-02-2025 01:01:57 ERROR Home:769: ERROR:: User Manage load Users Types search Combobox java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:57 INFO  Home:775: INFO:: User Manage load Users Status search Combobox
+22-02-2025 01:01:57 ERROR Home:786: ERROR:: User Manage load Users Status search Combobox java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:01:57 INFO  Home:692: INFO:: User Manage load Users Table
+22-02-2025 01:01:57 ERROR Home:713: ERROR:: User Manage load Users Table java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+22-02-2025 01:02:33 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:02:34 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:02:34 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:02:34 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:02:34 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:02:34 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:02:34 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:02:34 INFO  Home:156: INFO:: search Stock
+22-02-2025 01:02:35 INFO  Home:71: INFO:: run home
+22-02-2025 01:02:35 ERROR Home:121: ERROR:: get logged user data error
+22-02-2025 01:02:37 INFO  Home:857: INFO:: Invoice load category combo box
+22-02-2025 01:02:37 INFO  Home:874: INFO:: Invoice load product table
+22-02-2025 01:02:37 INFO  Home:834: INFO:: Invoice load payment types
+22-02-2025 01:02:39 INFO  Home:6845: INFO:: invoice, add product to cart
+22-02-2025 01:02:41 INFO  Home:5979: INFO:: add new invoice
+22-02-2025 01:02:46 INFO  Home:6005: INFO:: invoice printed.

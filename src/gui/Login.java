@@ -26,7 +26,7 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
-        
+
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/image/canteen.png")));
 
 //        LOG.debug("DEBUG:: debug test");
@@ -35,7 +35,6 @@ public class Login extends javax.swing.JFrame {
 //        LOG.warn("WARNING:: debug test");
 //        LOG.fatal("FATAL:: debug test");
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.

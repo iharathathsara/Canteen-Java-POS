@@ -27,6 +27,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
@@ -71,8 +72,6 @@ public final class Home extends javax.swing.JFrame {
 
         getLoggedUser();
         setDateTime();
-        
-        
 
 //        LOG.debug("DEBUG:: debug test");
 //        LOG.info("INFO:: debug test");
@@ -102,22 +101,21 @@ public final class Home extends javax.swing.JFrame {
             loggedUserName = loggedUserName.toUpperCase();
             logged_user_type_id = loggedUser_rs.getString("user_type_id");
             jLabel69.setText(loggedUserName);
-            
+
             LOG.info("INFO:: get logged user data success");
-            
-            if (logged_user_type_id.equals("4")) {
-                jButton18.setEnabled(false);
-                jButton23.setEnabled(false);
-                jButton24.setEnabled(false);
-                jButton29.setEnabled(false);
-            }else if(logged_user_type_id.equals("5")){
-                jButton18.setEnabled(false);
-                jButton22.setEnabled(false);
-                jButton23.setEnabled(false);
-                jButton24.setEnabled(false);
-                jButton29.setEnabled(false);
-            }
-            
+
+//            if (logged_user_type_id.equals("4")) {
+//                jButton18.setEnabled(false);
+//                jButton23.setEnabled(false);
+//                jButton24.setEnabled(false);
+//                jButton29.setEnabled(false);
+//            } else if (logged_user_type_id.equals("5")) {
+//                jButton18.setEnabled(false);
+//                jButton22.setEnabled(false);
+//                jButton23.setEnabled(false);
+//                jButton24.setEnabled(false);
+//                jButton29.setEnabled(false);
+//            }
         } catch (Exception e) {
             e.printStackTrace();
             LOG.error("ERROR:: get logged user data error");
@@ -249,10 +247,17 @@ public final class Home extends javax.swing.JFrame {
                 }
             }
 
-            String wherequery = "WHERE `stock`.`quantity`>='0' ";
+            String wherequery = "";
+
+            if (!queryVector.isEmpty()) {
+                wherequery = "WHERE  ";
+            }
 
             for (int i = 0; i < queryVector.size(); i++) {
-                wherequery += " AND ";
+                if (i != 0) {
+                    wherequery += " AND ";
+                }
+
                 wherequery += queryVector.get(i);
                 wherequery += " ";
             }
@@ -312,7 +317,7 @@ public final class Home extends javax.swing.JFrame {
     public void loadStockTable() {
         try {
             LOG.info("INFO:: Load Stock Table");
-            ResultSet rs = MySQL.search("SELECT DISTINCT `stock`.`id`,`product`.`id`,`category`.`name`,`brand`.`name`,`product`.`title`,`stock`.`quantity`,`grn_item`.`buying_price`,`stock`.`selling_price`,`stock`.`mfd`,`stock`.`exd` FROM `stock` INNER JOIN `grn_item` ON `grn_item`.`stock_id`=`stock`.`id` INNER JOIN `product` ON `stock`.`product_id`=`product`.`id` INNER JOIN `brand` ON `product`.`brand_id`=`brand`.`id` INNER JOIN `category` ON `product`.`category_id`=`category`.`id` WHERE `stock`.`quantity`>='0' ORDER BY `product`.`title` ASC");
+            ResultSet rs = MySQL.search("SELECT DISTINCT `stock`.`id`,`product`.`id`,`category`.`name`,`brand`.`name`,`product`.`title`,`stock`.`quantity`,`grn_item`.`buying_price`,`stock`.`selling_price`,`stock`.`mfd`,`stock`.`exd` FROM `stock` INNER JOIN `grn_item` ON `grn_item`.`stock_id`=`stock`.`id` INNER JOIN `product` ON `stock`.`product_id`=`product`.`id` INNER JOIN `brand` ON `product`.`brand_id`=`brand`.`id` INNER JOIN `category` ON `product`.`category_id`=`category`.`id` ORDER BY `product`.`title` ASC");
             DefaultTableModel dtm = (DefaultTableModel) jTable5.getModel();
             dtm.setRowCount(0);
             int rowCount = 1;
@@ -796,9 +801,9 @@ public final class Home extends javax.swing.JFrame {
     }
 
     public void resetInvoice() {
-        loadCategoryComboInvoice();
-        loadProductTableInvoice();
-        loadPaymentTypeComboInvoice();
+//        loadCategoryComboInvoice();
+//        loadProductTableInvoice();
+//        loadPaymentTypeComboInvoice();
         jTextField27.setText("");
         jLabel88.setText("00.00");
         jTextField28.setText("");
@@ -867,7 +872,7 @@ public final class Home extends javax.swing.JFrame {
     public void loadProductTableInvoice() {
         try {
             LOG.info("INFO:: Invoice load product table");
-            ResultSet rs = MySQL.search("SELECT DISTINCT `stock`.`id`,`product`.`id`,`category`.`name`,`product`.`title`,`stock`.`quantity`,`stock`.`selling_price`,`stock`.`mfd`,`stock`.`exd` FROM `stock` INNER JOIN `product` ON `stock`.`product_id`=`product`.`id` INNER JOIN `category` ON `product`.`category_id`=`category`.`id` WHERE `stock`.`quantity`!='0' ORDER BY `product`.`title` ASC");
+            ResultSet rs = MySQL.search("SELECT DISTINCT `stock`.`id`,`product`.`id`,`category`.`name`,`product`.`title`,`stock`.`quantity`,`stock`.`selling_price`,`stock`.`mfd`,`stock`.`exd` FROM `stock` INNER JOIN `product` ON `stock`.`product_id`=`product`.`id` INNER JOIN `category` ON `product`.`category_id`=`category`.`id` ORDER BY `product`.`title` ASC");
             DefaultTableModel dtm = (DefaultTableModel) jTable6.getModel();
             dtm.setRowCount(0);
             while (rs.next()) {
@@ -895,7 +900,7 @@ public final class Home extends javax.swing.JFrame {
             if (category.equals("SELECT")) {
                 loadProductTableInvoice();
             } else {
-                ResultSet rs = MySQL.search("SELECT DISTINCT `stock`.`id`,`product`.`id`,`category`.`name`,`product`.`title`,`stock`.`quantity`,`stock`.`selling_price`,`stock`.`mfd`,`stock`.`exd` FROM `stock` INNER JOIN `product` ON `stock`.`product_id`=`product`.`id` INNER JOIN `category` ON `product`.`category_id`=`category`.`id` WHERE `stock`.`quantity`!=? AND `category`.`name`=? ORDER BY `product`.`title` ASC", '0', category);
+                ResultSet rs = MySQL.search("SELECT DISTINCT `stock`.`id`,`product`.`id`,`category`.`name`,`product`.`title`,`stock`.`quantity`,`stock`.`selling_price`,`stock`.`mfd`,`stock`.`exd` FROM `stock` INNER JOIN `product` ON `stock`.`product_id`=`product`.`id` INNER JOIN `category` ON `product`.`category_id`=`category`.`id` WHERE `category`.`name`=? ORDER BY `product`.`title` ASC", category);
                 DefaultTableModel dtm = (DefaultTableModel) jTable6.getModel();
                 dtm.setRowCount(0);
                 while (rs.next()) {
@@ -936,12 +941,131 @@ public final class Home extends javax.swing.JFrame {
     public void loadCashSummaryPanel() {
         tableFontCashSummary();
         loadInviocesTableCashSummary();
+        loadInvoiceHistoryUserCombo();
+        loadInvoicesProductsByFiltersTableCashSummary();
+    }
+
+    public void loadInvoicesProductsByFiltersTableCashSummary() {
+        try {
+            // Get selected values from date choosers and combo box
+            java.util.Date fromDate = jDateChooser7.getDate();  // Assuming your JDateChooser variable names
+            java.util.Date toDate = jDateChooser8.getDate();
+            String selectedUser = (String) jComboBox12.getSelectedItem();  // User selected in combo box
+
+            // Convert dates to SQL format (yyyy-MM-dd)
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String fromDateStr = (fromDate != null) ? sdf.format(fromDate) : null;
+            String toDateStr = (toDate != null) ? sdf.format(toDate) : null;
+
+            // Initialize the base query
+            String query = "SELECT `product`.`title` AS `product_name`, "
+                    + "SUM(`invoice_item`.`qty`) AS `total_quantity_sold`, "
+                    + "`invoice_item`.`selling_price` AS `selling_price`, "
+                    + "SUM(`invoice_item`.`qty` * `invoice_item`.`selling_price`) AS `total_amount` "
+                    + "FROM `invoice_item` "
+                    + "JOIN `stock` ON `invoice_item`.`stock_id` = `stock`.`id` "
+                    + "JOIN `product` ON `stock`.`product_id` = `product`.`id` "
+                    + "JOIN `invoice` ON `invoice_item`.`invoice_id` = `invoice`.`id` ";  // Assuming `invoice` table exists for user data
+
+            // Add conditions based on selected filters
+            boolean hasConditions = false;
+
+            // Filter by date range
+            if (fromDateStr != null && toDateStr != null) {
+                query += "WHERE `invoice`.`date_time` BETWEEN '" + fromDateStr + "' AND '" + toDateStr + "' ";
+                hasConditions = true;
+            } else if (fromDateStr != null) {
+                query += "WHERE `invoice`.`date_time` >= '" + fromDateStr + "' ";
+                hasConditions = true;
+            } else if (toDateStr != null) {
+                query += "WHERE `invoice`.`date_time` <= '" + toDateStr + "' ";
+                hasConditions = true;
+            }
+
+            // Filter by user if selected
+            if (selectedUser != null && !selectedUser.equals("SELECT")) {
+                if (hasConditions) {
+                    query += "AND `invoice`.`user_id` = (SELECT `id` FROM `user` WHERE CONCAT(`fname`, ' ', `lname`) = '" + selectedUser + "') ";
+                } else {
+                    query += "WHERE `invoice`.`user_id` = (SELECT `id` FROM `user` WHERE CONCAT(`fname`, ' ', `lname`) = '" + selectedUser + "') ";
+                    hasConditions = true;
+                }
+            }
+
+            // Finish the query with GROUP BY
+            query += "GROUP BY `product`.`title`, `invoice_item`.`selling_price`";
+
+            // Execute the query
+            ResultSet rs = MySQL.search(query);
+
+            DefaultTableModel dtm = (DefaultTableModel) jTable12.getModel();
+            dtm.setRowCount(0);  // Clear existing rows
+            int i = 1;
+
+            // Populate the table with the result
+            while (rs.next()) {
+                Vector v1 = new Vector();
+                v1.add(i);
+                i++;
+                v1.add(rs.getString("product_name"));
+                v1.add(rs.getString("total_quantity_sold"));
+//                v1.add(rs.getString("selling_price"));
+                v1.add(String.format("%.2f", rs.getDouble("selling_price")));
+                v1.add(String.format("%.2f", rs.getDouble("total_amount")));
+//                v1.add(rs.getString("total_amount"));
+                dtm.addRow(v1);
+            }
+
+            jTable12.setModel(dtm);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+//    public void loadInvoicesProductsTableCashSummary() {
+//        try {
+//            ResultSet rs = MySQL.search("SELECT `product`.`title` AS `product_name`, SUM(`invoice_item`.`qty`) AS `total_quantity_sold`, `invoice_item`.`selling_price` AS `selling_price` , SUM(`invoice_item`.`qty` * `invoice_item`.`selling_price`) AS `total_amount` FROM `invoice_item` JOIN `stock` ON `invoice_item`.`stock_id` = `stock`.`id` JOIN `product` ON `stock`.`product_id` = `product`.`id` GROUP BY `product`.`title`, `invoice_item`.`selling_price`");
+//            DefaultTableModel dtm = (DefaultTableModel) jTable12.getModel();
+//            dtm.setRowCount(0);
+//            int i = 1;
+//            while (rs.next()) {
+//                Vector v1 = new Vector();
+//                v1.add(i);
+//                i++;
+//                v1.add(rs.getString("product_name"));
+//                v1.add(rs.getString("total_quantity_sold"));
+//                v1.add(rs.getString("selling_price"));
+//                v1.add(rs.getString("total_amount"));
+//                dtm.addRow(v1);
+//            }
+//            jTable12.setModel(dtm);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+    public void loadInvoiceHistoryUserCombo() {
+        try {
+            LOG.info("INFO:: invoice history load user combo box");
+            ResultSet rs = MySQL.search("SELECT * FROM `user`");
+            Vector v3 = new Vector();
+            v3.add("SELECT");
+            while (rs.next()) {
+                v3.add(rs.getString("fname") + " " + rs.getString("lname"));
+            }
+            DefaultComboBoxModel dcm = new DefaultComboBoxModel(v3);
+            jComboBox12.setModel(dcm);
+        } catch (Exception e) {
+            e.printStackTrace();
+            LOG.error("ERROR:: invoice history load user combo box " + e);
+        }
     }
 
     public void tableFontCashSummary() {
         Font f = new Font("Roboto", Font.PLAIN, 14);
         jTable8.getTableHeader().setFont(f);
         jTable9.getTableHeader().setFont(f);
+        jTable12.getTableHeader().setFont(f);
     }
 
     public void loadInviocesTableCashSummary() {
@@ -970,6 +1094,8 @@ public final class Home extends javax.swing.JFrame {
         try {
             String dateFrom = null;
             String dateTo = null;
+            String fname = null;
+            String lname = null;
 
             if (jDateChooser7.getDate() != null) {
                 dateFrom = sdf.format(jDateChooser7.getDate());
@@ -977,20 +1103,44 @@ public final class Home extends javax.swing.JFrame {
             if (jDateChooser8.getDate() != null) {
                 dateTo = sdf.format(jDateChooser8.getDate());
             }
-
-// Base query
-            String query = "SELECT DISTINCT `invoice`.`id` AS `invoice_id`, `invoice`.`date_time` AS `date_time`, `user`.`fname` AS `fname`, `user`.`lname` AS `lname`, `invoice_payment`.`payment` AS `payment`, `invoice_payment`.`balance` AS `balance` FROM `invoice` INNER JOIN `user` ON `invoice`.`user_id` = `user`.`id` INNER JOIN `invoice_item` ON `invoice`.`id` = `invoice_item`.`invoice_id` INNER JOIN `invoice_payment` ON `invoice`.`id` = `invoice_payment`.`invoice_id`  ";
-
-// Add conditions for date filters
-            if (dateFrom != null && dateTo != null) {
-                query += " WHERE `invoice`.`date_time` BETWEEN '" + dateFrom + " 00:00:00' AND '" + dateTo + " 23:59:59'";
-            } else if (dateFrom != null) {
-                query += " WHERE `invoice`.`date_time` >= '" + dateFrom + " 00:00:00'";
-            } else if (dateTo != null) {
-                query += " WHERE `invoice`.`date_time` <= '" + dateTo + " 23:59:59'";
+            if (!jComboBox12.getSelectedItem().equals("SELECT")) {
+                String fullname = jComboBox12.getSelectedItem().toString();
+                String[] nameParts = fullname.split(" ", 2); // Split into fname and lname
+                if (nameParts.length == 2) {
+                    fname = nameParts[0];
+                    lname = nameParts[1];
+                }
             }
 
-// Add grouping and ordering
+// Base query
+            String query = "SELECT DISTINCT `invoice`.`id` AS `invoice_id`, `invoice`.`date_time` AS `date_time`, "
+                    + "`user`.`fname` AS `fname`, `user`.`lname` AS `lname`, "
+                    + "`invoice_payment`.`payment` AS `payment`, `invoice_payment`.`balance` AS `balance` "
+                    + "FROM `invoice` "
+                    + "INNER JOIN `user` ON `invoice`.`user_id` = `user`.`id` "
+                    + "INNER JOIN `invoice_item` ON `invoice`.`id` = `invoice_item`.`invoice_id` "
+                    + "INNER JOIN `invoice_payment` ON `invoice`.`id` = `invoice_payment`.`invoice_id` ";
+
+            // Apply filters
+            List<String> conditions = new ArrayList<>();
+
+            if (fname != null && lname != null) {
+                conditions.add("`user`.`fname` = '" + fname + "' AND `user`.`lname` = '" + lname + "'");
+            }
+            if (dateFrom != null && dateTo != null) {
+                conditions.add("`invoice`.`date_time` BETWEEN '" + dateFrom + " 00:00:00' AND '" + dateTo + " 23:59:59'");
+            } else if (dateFrom != null) {
+                conditions.add("`invoice`.`date_time` >= '" + dateFrom + " 00:00:00'");
+            } else if (dateTo != null) {
+                conditions.add("`invoice`.`date_time` <= '" + dateTo + " 23:59:59'");
+            }
+
+            // Add WHERE conditions if any exist
+            if (!conditions.isEmpty()) {
+                query += " WHERE " + String.join(" AND ", conditions);
+            }
+
+            // Order by date
             query += " ORDER BY `invoice`.`date_time` DESC";
 
 // Execute query
@@ -1281,9 +1431,9 @@ public final class Home extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
         jLabel41 = new javax.swing.JLabel();
         jTextField11 = new javax.swing.JTextField();
+        jTextField30 = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
@@ -1294,7 +1444,7 @@ public final class Home extends javax.swing.JFrame {
         jLabel47 = new javax.swing.JLabel();
         jTextField13 = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        jTextField29 = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel26 = new javax.swing.JPanel();
@@ -1349,6 +1499,14 @@ public final class Home extends javax.swing.JFrame {
         jButton16 = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTable6 = new javax.swing.JTable();
+        jPanel15 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jButton38 = new javax.swing.JButton();
+        jButton39 = new javax.swing.JButton();
+        jButton40 = new javax.swing.JButton();
+        jButton41 = new javax.swing.JButton();
+        jButton42 = new javax.swing.JButton();
+        jButton43 = new javax.swing.JButton();
         jPanel37 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable7 = new javax.swing.JTable();
@@ -1375,6 +1533,13 @@ public final class Home extends javax.swing.JFrame {
         jTable8 = new javax.swing.JTable();
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable9 = new javax.swing.JTable();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jComboBox12 = new javax.swing.JComboBox<>();
+        jPanel41 = new javax.swing.JPanel();
+        jButton32 = new javax.swing.JButton();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jTable12 = new javax.swing.JTable();
         grnHistoryjPanel14 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -2747,8 +2912,8 @@ public final class Home extends javax.swing.JFrame {
                 .addComponent(jLabel67)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
-                .addComponent(jButton11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
         );
 
@@ -2831,19 +2996,6 @@ public final class Home extends javax.swing.JFrame {
         jLabel40.setForeground(new java.awt.Color(242, 242, 242));
         jLabel40.setText("Password");
 
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPasswordField1.setForeground(new java.awt.Color(52, 58, 64));
-        jPasswordField1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPasswordField1MouseClicked(evt);
-            }
-        });
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
-
         jLabel41.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(242, 242, 242));
         jLabel41.setText("User Type");
@@ -2852,6 +3004,13 @@ public final class Home extends javax.swing.JFrame {
         jTextField11.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTextField11.setForeground(new java.awt.Color(52, 58, 64));
         jTextField11.setEnabled(false);
+
+        jTextField30.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jTextField30.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField30MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -2863,13 +3022,13 @@ public final class Home extends javax.swing.JFrame {
                     .addComponent(jTextField6)
                     .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPasswordField1)
                     .addComponent(jTextField9)
                     .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField11)
                     .addGroup(jPanel24Layout.createSequentialGroup()
                         .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jTextField11))
+                        .addGap(0, 4, Short.MAX_VALUE))
+                    .addComponent(jTextField30))
                 .addContainerGap())
         );
         jPanel24Layout.setVerticalGroup(
@@ -2886,8 +3045,8 @@ public final class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel40)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
                 .addComponent(jLabel41)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2945,10 +3104,10 @@ public final class Home extends javax.swing.JFrame {
         jLabel48.setForeground(new java.awt.Color(242, 242, 242));
         jLabel48.setText("Confirm Password");
 
-        jPasswordField3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPasswordField3.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTextField29.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jTextField29.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPasswordField3MouseClicked(evt);
+                jTextField29MouseClicked(evt);
             }
         });
 
@@ -2965,8 +3124,8 @@ public final class Home extends javax.swing.JFrame {
                     .addComponent(jTextField13)
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPasswordField3))
+                        .addGap(0, 2, Short.MAX_VALUE))
+                    .addComponent(jTextField29))
                 .addContainerGap())
         );
         jPanel25Layout.setVerticalGroup(
@@ -2983,8 +3142,8 @@ public final class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel48)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         jLabel50.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
@@ -3605,6 +3764,11 @@ public final class Home extends javax.swing.JFrame {
             }
         });
         jScrollPane6.setViewportView(jTable5);
+        if (jTable5.getColumnModel().getColumnCount() > 0) {
+            jTable5.getColumnModel().getColumn(0).setMaxWidth(60);
+            jTable5.getColumnModel().getColumn(1).setMaxWidth(60);
+            jTable5.getColumnModel().getColumn(2).setMaxWidth(80);
+        }
 
         javax.swing.GroupLayout stockjPanel33Layout = new javax.swing.GroupLayout(stockjPanel33);
         stockjPanel33.setLayout(stockjPanel33Layout);
@@ -3705,6 +3869,115 @@ public final class Home extends javax.swing.JFrame {
         jTable6.setRowHeight(40);
         jTable6.getTableHeader().setReorderingAllowed(false);
         jScrollPane7.setViewportView(jTable6);
+        if (jTable6.getColumnModel().getColumnCount() > 0) {
+            jTable6.getColumnModel().getColumn(0).setMaxWidth(60);
+        }
+
+        jPanel15.setBackground(new java.awt.Color(52, 58, 64));
+        jPanel15.setLayout(new javax.swing.BoxLayout(jPanel15, javax.swing.BoxLayout.LINE_AXIS));
+
+        jPanel16.setBackground(new java.awt.Color(52, 58, 64));
+
+        jButton38.setBackground(new java.awt.Color(0, 123, 255));
+        jButton38.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jButton38.setText("1");
+        jButton38.setContentAreaFilled(false);
+        jButton38.setOpaque(true);
+        jButton38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton38ActionPerformed(evt);
+            }
+        });
+
+        jButton39.setBackground(new java.awt.Color(0, 123, 255));
+        jButton39.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jButton39.setText("2");
+        jButton39.setContentAreaFilled(false);
+        jButton39.setOpaque(true);
+        jButton39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton39ActionPerformed(evt);
+            }
+        });
+
+        jButton40.setBackground(new java.awt.Color(0, 123, 255));
+        jButton40.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jButton40.setText("3");
+        jButton40.setContentAreaFilled(false);
+        jButton40.setOpaque(true);
+        jButton40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton40ActionPerformed(evt);
+            }
+        });
+
+        jButton41.setBackground(new java.awt.Color(0, 123, 255));
+        jButton41.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jButton41.setText("4");
+        jButton41.setContentAreaFilled(false);
+        jButton41.setOpaque(true);
+        jButton41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton41ActionPerformed(evt);
+            }
+        });
+
+        jButton42.setBackground(new java.awt.Color(0, 123, 255));
+        jButton42.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jButton42.setText("5");
+        jButton42.setContentAreaFilled(false);
+        jButton42.setOpaque(true);
+        jButton42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton42ActionPerformed(evt);
+            }
+        });
+
+        jButton43.setBackground(new java.awt.Color(0, 123, 255));
+        jButton43.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jButton43.setText("10");
+        jButton43.setContentAreaFilled(false);
+        jButton43.setOpaque(true);
+        jButton43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton43ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton38, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton39, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton40, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton41, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton42, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton43, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton38)
+                    .addComponent(jButton39)
+                    .addComponent(jButton40)
+                    .addComponent(jButton41)
+                    .addComponent(jButton42)
+                    .addComponent(jButton43))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel15.add(jPanel16);
 
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
@@ -3713,6 +3986,7 @@ public final class Home extends javax.swing.JFrame {
             .addGroup(jPanel36Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane7)
                     .addGroup(jPanel36Layout.createSequentialGroup()
                         .addComponent(jLabel85)
@@ -3739,7 +4013,9 @@ public final class Home extends javax.swing.JFrame {
                     .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton16))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7)
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -3758,7 +4034,7 @@ public final class Home extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -3773,6 +4049,9 @@ public final class Home extends javax.swing.JFrame {
             }
         });
         jScrollPane8.setViewportView(jTable7);
+        if (jTable7.getColumnModel().getColumnCount() > 0) {
+            jTable7.getColumnModel().getColumn(0).setMaxWidth(60);
+        }
 
         javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
         jPanel37.setLayout(jPanel37Layout);
@@ -3828,8 +4107,12 @@ public final class Home extends javax.swing.JFrame {
         jCheckBox2.setBackground(new java.awt.Color(52, 58, 64));
         jCheckBox2.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         jCheckBox2.setForeground(new java.awt.Color(242, 242, 242));
-        jCheckBox2.setSelected(true);
-        jCheckBox2.setText(" Print Invoice");
+        jCheckBox2.setText(" Print Two Invoices");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
 
         jButton17.setBackground(new java.awt.Color(40, 167, 69));
         jButton17.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -3880,11 +4163,12 @@ public final class Home extends javax.swing.JFrame {
                                 .addComponent(jLabel87)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel88))
-                            .addGroup(jPanel38Layout.createSequentialGroup()
-                                .addComponent(jLabel91)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel92))
-                            .addComponent(jCheckBox2))
+                            .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jCheckBox2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel38Layout.createSequentialGroup()
+                                    .addComponent(jLabel91)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel92))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -3909,9 +4193,8 @@ public final class Home extends javax.swing.JFrame {
                     .addComponent(jLabel92))
                 .addGap(18, 18, 18)
                 .addComponent(jCheckBox2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton17)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout invoicejPanel36Layout = new javax.swing.GroupLayout(invoicejPanel36);
@@ -3969,8 +4252,7 @@ public final class Home extends javax.swing.JFrame {
 
         jButton25.setBackground(new java.awt.Color(255, 193, 7));
         jButton25.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jButton25.setForeground(new java.awt.Color(242, 242, 242));
-        jButton25.setText("Print Summary");
+        jButton25.setText("Print Invoices Details");
         jButton25.setContentAreaFilled(false);
         jButton25.setOpaque(true);
         jButton25.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -4060,6 +4342,9 @@ public final class Home extends javax.swing.JFrame {
             }
         });
         jScrollPane9.setViewportView(jTable8);
+        if (jTable8.getColumnModel().getColumnCount() > 0) {
+            jTable8.getColumnModel().getColumn(0).setMaxWidth(60);
+        }
 
         jScrollPane10.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
 
@@ -4083,6 +4368,98 @@ public final class Home extends javax.swing.JFrame {
         jTable9.setRowHeight(25);
         jTable9.getTableHeader().setReorderingAllowed(false);
         jScrollPane10.setViewportView(jTable9);
+        if (jTable9.getColumnModel().getColumnCount() > 0) {
+            jTable9.getColumnModel().getColumn(0).setMaxWidth(60);
+        }
+
+        jPanel17.setBackground(new java.awt.Color(52, 58, 64));
+
+        jLabel11.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel11.setText("Select User : ");
+
+        jComboBox12.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jComboBox12.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox12ItemStateChanged(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox12, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel41.setBackground(new java.awt.Color(52, 58, 64));
+
+        jButton32.setBackground(new java.awt.Color(40, 167, 69));
+        jButton32.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton32.setForeground(new java.awt.Color(242, 242, 242));
+        jButton32.setText("Print Products Details");
+        jButton32.setContentAreaFilled(false);
+        jButton32.setOpaque(true);
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
+        jPanel41.setLayout(jPanel41Layout);
+        jPanel41Layout.setHorizontalGroup(
+            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel41Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel41Layout.setVerticalGroup(
+            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel41Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTable12.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jTable12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Product Name", "Quantity", "Selling Price", "Total"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable12.setRowHeight(25);
+        jTable12.getTableHeader().setReorderingAllowed(false);
+        jScrollPane13.setViewportView(jTable12);
+        if (jTable12.getColumnModel().getColumnCount() > 0) {
+            jTable12.getColumnModel().getColumn(0).setMaxWidth(60);
+        }
 
         javax.swing.GroupLayout cashSummaryjPanel13Layout = new javax.swing.GroupLayout(cashSummaryjPanel13);
         cashSummaryjPanel13.setLayout(cashSummaryjPanel13Layout);
@@ -4093,9 +4470,14 @@ public final class Home extends javax.swing.JFrame {
                 .addGroup(cashSummaryjPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(cashSummaryjPanel13Layout.createSequentialGroup()
-                        .addComponent(jScrollPane9)
+                        .addGroup(cashSummaryjPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane9)
+                            .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane10)))
+                        .addGroup(cashSummaryjPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane10)
+                            .addComponent(jPanel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane13))))
                 .addContainerGap())
         );
         cashSummaryjPanel13Layout.setVerticalGroup(
@@ -4104,9 +4486,16 @@ public final class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cashSummaryjPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cashSummaryjPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
-                    .addComponent(jScrollPane10))
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+                    .addGroup(cashSummaryjPanel13Layout.createSequentialGroup()
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -4217,7 +4606,7 @@ public final class Home extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -4232,6 +4621,9 @@ public final class Home extends javax.swing.JFrame {
             }
         });
         jScrollPane11.setViewportView(jTable10);
+        if (jTable10.getColumnModel().getColumnCount() > 0) {
+            jTable10.getColumnModel().getColumn(0).setMaxWidth(60);
+        }
 
         jTable11.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTable11.setModel(new javax.swing.table.DefaultTableModel(
@@ -4243,7 +4635,7 @@ public final class Home extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -4253,6 +4645,9 @@ public final class Home extends javax.swing.JFrame {
         jTable11.setRowHeight(25);
         jTable11.getTableHeader().setReorderingAllowed(false);
         jScrollPane12.setViewportView(jTable11);
+        if (jTable11.getColumnModel().getColumnCount() > 0) {
+            jTable11.getColumnModel().getColumn(0).setMaxWidth(60);
+        }
 
         javax.swing.GroupLayout grnHistoryjPanel14Layout = new javax.swing.GroupLayout(grnHistoryjPanel14);
         grnHistoryjPanel14.setLayout(grnHistoryjPanel14Layout);
@@ -4289,7 +4684,7 @@ public final class Home extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(52, 58, 64));
 
-        jPanel6.setBackground(new java.awt.Color(111, 66, 193));
+        jPanel6.setBackground(new java.awt.Color(255, 193, 7));
         jPanel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -4856,10 +5251,6 @@ public final class Home extends javax.swing.JFrame {
         jButton7.setBackground(new Color(25, 150, 50));
     }//GEN-LAST:event_jButton7MouseExited
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
-
     private void jButton8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseEntered
         // TODO add your handling code here:
         jButton8.setBackground(new Color(220, 100, 10));
@@ -4961,10 +5352,8 @@ public final class Home extends javax.swing.JFrame {
         String fname = jTextField6.getText();
         String lname = jTextField12.getText();
         String mobile = jTextField13.getText();
-        char passwordArray[] = jPasswordField1.getPassword();
-        String password = String.valueOf(passwordArray);
-        char cpasswordArray[] = jPasswordField3.getPassword();
-        String cpassword = String.valueOf(cpasswordArray);
+        String password = jTextField30.getText();
+        String cpassword = jTextField29.getText();
         String line1 = jTextField15.getText();
         String line2 = jTextField17.getText();
         String city = jTextField16.getText();
@@ -5303,47 +5692,58 @@ public final class Home extends javax.swing.JFrame {
 
                 if (jCheckBox1.isSelected()) {
 
+                    new Thread(() -> {
+                        try {
+
 //                    String path = "src//reports//canteen_grn.jasper";
-                    InputStream path = getClass().getResourceAsStream("/reports/canteen_grn.jasper");
+                            InputStream path = getClass().getResourceAsStream("/reports/canteen_grn.jasper");
 
-                    if (path == null) {
-                        JOptionPane.showMessageDialog(this, "Report Not found", "Warning", JOptionPane.WARNING_MESSAGE);
+                            if (path == null) {
+                                SwingUtilities.invokeLater(() -> {
+                                    JOptionPane.showMessageDialog(this, "Report Not found", "Warning", JOptionPane.WARNING_MESSAGE);
 
-                    } else {
-                        String total = jLabel63.getText();
+                                });
 
-                        HashMap parameters = new HashMap();
-                        parameters.put("Parameter1", jTable2.getValueAt(supllierRow, 1).toString());
-                        parameters.put("Parameter2", jTable2.getValueAt(supllierRow, 3).toString());
-                        parameters.put("Parameter3", jTable2.getValueAt(supllierRow, 2).toString());
-                        parameters.put("Parameter4", uniqueId);
-                        parameters.put("Parameter5", dNow);
-                        parameters.put("Parameter6", total);
-                        parameters.put("Parameter7", payment);
-                        parameters.put("Parameter8", balance);
+                            } else {
+                                String total = jLabel63.getText();
 
-                        Vector v = new Vector();
-                        for (int i = 0; i < jTable4.getRowCount(); i++) {
-                            String pid = jTable4.getValueAt(i, 0).toString();
-                            String pname = jTable4.getValueAt(i, 1).toString();
-                            String brand = jTable4.getValueAt(i, 2).toString();
-                            String qty = jTable4.getValueAt(i, 4).toString();
-                            String buyingPrice = jTable4.getValueAt(i, 8).toString();
-                            String mfd = jTable4.getValueAt(i, 5).toString();
-                            String exd = jTable4.getValueAt(i, 6).toString();
-                            String to = jTable4.getValueAt(i, 9).toString();
+                                HashMap parameters = new HashMap();
+                                parameters.put("Parameter1", jTable2.getValueAt(supllierRow, 1).toString());
+                                parameters.put("Parameter2", jTable2.getValueAt(supllierRow, 3).toString());
+                                parameters.put("Parameter3", jTable2.getValueAt(supllierRow, 2).toString());
+                                parameters.put("Parameter4", uniqueId);
+                                parameters.put("Parameter5", dNow);
+                                parameters.put("Parameter6", total);
+                                parameters.put("Parameter7", payment);
+                                parameters.put("Parameter8", balance);
 
-                            model.GRNBean g1 = new model.GRNBean(pid, pname, brand, qty, buyingPrice, mfd, exd, to);
-                            v.add(g1);
+                                Vector v = new Vector();
+                                for (int i = 0; i < jTable4.getRowCount(); i++) {
+                                    String pid = jTable4.getValueAt(i, 0).toString();
+                                    String pname = jTable4.getValueAt(i, 1).toString();
+                                    String brand = jTable4.getValueAt(i, 2).toString();
+                                    String qty = jTable4.getValueAt(i, 4).toString();
+                                    String buyingPrice = jTable4.getValueAt(i, 8).toString();
+                                    String mfd = jTable4.getValueAt(i, 5).toString();
+                                    String exd = jTable4.getValueAt(i, 6).toString();
+                                    String to = jTable4.getValueAt(i, 9).toString();
+
+                                    model.GRNBean g1 = new model.GRNBean(pid, pname, brand, qty, buyingPrice, mfd, exd, to);
+                                    v.add(g1);
+                                }
+
+                                JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(v);
+
+                                JasperPrint jp = JasperFillManager.fillReport(path, parameters, dataSource);
+                                JasperViewer.viewReport(jp, false);
+
+                                LOG.info("INFO:: print grn");
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
 
-                        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(v);
-
-                        JasperPrint jp = JasperFillManager.fillReport(path, parameters, dataSource);
-                        JasperViewer.viewReport(jp, false);
-
-                        LOG.info("INFO:: print grn");
-                    }
+                    }).start();
 
                 }
                 JOptionPane.showMessageDialog(this, "New GRN created", "Success", JOptionPane.INFORMATION_MESSAGE);
@@ -5469,8 +5869,8 @@ public final class Home extends javax.swing.JFrame {
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
-        if (logged_user_type_id.equals("1")||logged_user_type_id.equals("2")||logged_user_type_id.equals("3")){
-        
+//        if (logged_user_type_id.equals("1") || logged_user_type_id.equals("2") || logged_user_type_id.equals("3")) {
+
         String sellingPrice = jLabel83.getText();
         String newPrice = jTextField26.getText();
         int selectedRow = jTable5.getSelectedRow();
@@ -5496,9 +5896,9 @@ public final class Home extends javax.swing.JFrame {
             }
             resetStockPanel();
         }
-        }else{
-            JOptionPane.showMessageDialog(this, "You don't have permition to update selling price", "Warning", JOptionPane.WARNING_MESSAGE);
-        }
+//        } else {
+//            JOptionPane.showMessageDialog(this, "You don't have permition to update selling price", "Warning", JOptionPane.WARNING_MESSAGE);
+//        }
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jTextField27KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField27KeyTyped
@@ -5516,76 +5916,7 @@ public final class Home extends javax.swing.JFrame {
         int selectedRow = jTable6.getSelectedRow();
         String qty = jTextField27.getText();
 
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "Please select a product", "Warning", JOptionPane.WARNING_MESSAGE);
-        } else if (!Pattern.compile("[1-9][0-9]*").matcher(qty).matches()) {
-            JOptionPane.showMessageDialog(this, "Please enter quantity", "Warning", JOptionPane.WARNING_MESSAGE);
-        } else {
-            try {
-                String sid = jTable6.getValueAt(selectedRow, 0).toString();
-                String pName = jTable6.getValueAt(selectedRow, 1).toString();
-                String sp = jTable6.getValueAt(selectedRow, 4).toString();
-
-//                ResultSet stock_rs = MySQL.search("SELECT * FROM `stock` WHERE `stock`.`id`=?", sid);
-//                stock_rs.next();
-//                String availableQty = stock_rs.getString("quantity");
-//                if (Integer.parseInt(availableQty) < Integer.parseInt(qty)) {
-//                    JOptionPane.showMessageDialog(this, "Quantity out of stock", "Warning", JOptionPane.WARNING_MESSAGE);
-//                } else {
-                    DefaultTableModel dtm = (DefaultTableModel) jTable7.getModel();
-                    boolean isFound = false;
-                    int x = -1;
-                    for (int i = 0; i < dtm.getRowCount(); i++) {
-                        String s = jTable7.getValueAt(i, 0).toString();
-                        if (s.equals(sid)) {
-                            isFound = true;
-                            x = i;
-                            break;
-                        }
-                    }
-                    //add
-                    if (isFound) {
-                        int option = JOptionPane.showConfirmDialog(this, "This product is already added. Do you want to update?", "Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-                        if (option == JOptionPane.YES_OPTION) {
-                            int oldQty = Integer.parseInt(jTable7.getValueAt(x, 3).toString());
-                            int finalQty = oldQty + Integer.parseInt(qty);
-                            //check stock
-//                            if (Integer.parseInt(availableQty) < finalQty) {
-//                                JOptionPane.showMessageDialog(this, "Quantity out of stock", "Warning", JOptionPane.WARNING_MESSAGE);
-//                            } else {
-                                jTable7.setValueAt(String.valueOf(finalQty), x, 3);
-                                double updatedItemtotal = finalQty * Double.parseDouble(sp);
-                                jTable7.setValueAt(String.valueOf(updatedItemtotal), x, 4);
-                                updateInvoiceTotal();
-                                LOG.info("INFO:: invoice, update cart item");
-//                            }
-                            //check stock
-                        }
-//                        resetfields();
-                    } else {
-                        Vector v = new Vector();
-                        v.add(sid);
-                        v.add(pName);
-                        v.add(sp);
-                        v.add(qty);
-                        double itemtotal = Integer.parseInt(qty) * Double.parseDouble(sp);
-                        v.add(df.format(itemtotal));
-                        dtm.addRow(v);
-                        updateInvoiceTotal();
-                        LOG.info("INFO:: invoice, add product to cart");
-                        
-                        JOptionPane.showMessageDialog(this, "Product add to Invoice", "Success", JOptionPane.INFORMATION_MESSAGE);
-                    }
-                    loadProductTableInvoice();
-                    jTextField27.setText("");
-                    jComboBox10.setSelectedIndex(0);
-//                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                LOG.error("ERROR:: invoice, add to cart error" + e);
-            }
-
-        }
+        addToCartInvoicePanel(selectedRow, qty);
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jComboBox10ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox10ItemStateChanged
@@ -5625,96 +5956,101 @@ public final class Home extends javax.swing.JFrame {
         } else if (!Pattern.compile("(0)|([1-9][0-9]*)|(([1-9][0-9]*)[.]([0]*[1-9][0-9]*))|([0][.]([0]*[1-9][0-9]*))").matcher(payment).matches()) {
             JOptionPane.showMessageDialog(this, "Invalid payment", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
-            // invoice insert
-            long mTime = System.currentTimeMillis();
-            String uniqueId = mTime + "-" + logged_user_id;
+            new Thread(() -> {
+                // invoice insert
+                long mTime = System.currentTimeMillis();
+                String uniqueId = mTime + "-" + logged_user_id;
 //            String cid = jLabel5.getText();
+                SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String dNow = sdf2.format(new Date());
+                try {
+                    MySQL.iud("INSERT INTO `invoice` (`date_time`,`user_id`,`unique_id`) VALUES (?,?,?)", dNow, logged_user_id, uniqueId);
+                    // Invoice insert
 
-            SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            String dNow = sdf2.format(new Date());
+                    //Invoice payment insert
+                    ResultSet rs = MySQL.search("SELECT * FROM `invoice` WHERE `unique_id`=?", uniqueId);
+                    rs.next();
+                    String id = rs.getString("id");
+                    ResultSet rs2 = MySQL.search("SELECT * FROM `payment_type` WHERE `name`=?", paymentType);
+                    rs2.next();
+                    String paymentTypeId = rs2.getString("id");
+                    String balance = jLabel92.getText();
+                    MySQL.iud("INSERT INTO `invoice_payment` (`invoice_id`,`payment_type_id`,`payment`,`balance`) VALUES (?,?,?,?)", id, paymentTypeId, payment, balance);
+                    //invoice payment insert
+                    //invoice item insert &stock insert/update
+                    Vector v = new Vector();
+                    for (int i = 0; i < jTable7.getRowCount(); i++) {
+                        String sid = jTable7.getValueAt(i, 0).toString();
+                        String qty = jTable7.getValueAt(i, 3).toString();
 
-            MySQL.iud("INSERT INTO `invoice` (`date_time`,`user_id`,`unique_id`) VALUES (?,?,?)", dNow, logged_user_id, uniqueId);
-            // Invoice insert
-            try {
-                //Invoice payment insert
-                ResultSet rs = MySQL.search("SELECT * FROM `invoice` WHERE `unique_id`=?", uniqueId);
-                rs.next();
-                String id = rs.getString("id");
-                ResultSet rs2 = MySQL.search("SELECT * FROM `payment_type` WHERE `name`=?", paymentType);
-                rs2.next();
-                String paymentTypeId = rs2.getString("id");
-                String balance = jLabel92.getText();
-                MySQL.iud("INSERT INTO `invoice_payment` (`invoice_id`,`payment_type_id`,`payment`,`balance`) VALUES (?,?,?,?)", id, paymentTypeId, payment, balance);
-                //invoice payment insert
-                //invoice item insert &stock insert/update
-                Vector v = new Vector();
-                for (int i = 0; i < jTable7.getRowCount(); i++) {
-                    String sid = jTable7.getValueAt(i, 0).toString();
-                    String qty = jTable7.getValueAt(i, 3).toString();
+                        String selling_price = jTable7.getValueAt(i, 2).toString();
+                        String name = jTable7.getValueAt(i, 1).toString();
+                        String total = jTable7.getValueAt(i, 4).toString();
+                        ResultSet rs3 = MySQL.search("SELECT * FROM `stock` WHERE `id`=?", sid);
+                        rs3.next();
+                        String availableQty = rs3.getString("quantity");
+                        int updateQty = Integer.parseInt(availableQty) - Integer.parseInt(qty);
 
-                    String selling_price = jTable7.getValueAt(i, 2).toString();
-                    String name = jTable7.getValueAt(i, 1).toString();
-//                    String price = jTable7.getValueAt(i, 6).toString();
-                    String total = jTable7.getValueAt(i, 4).toString();
-                    ResultSet rs3 = MySQL.search("SELECT * FROM `stock` WHERE `id`=?", sid);
-                    rs3.next();
-                    String availableQty = rs3.getString("quantity");
-                    int updateQty = Integer.parseInt(availableQty) - Integer.parseInt(qty);
+                        model.InvoiceBean ib = new model.InvoiceBean(qty, name, total);
+                        v.add(ib);
 
-                    model.InvoiceBean ib = new model.InvoiceBean(qty, name, total);
-                    v.add(ib);
-
-                    MySQL.iud("UPDATE `stock` SET `quantity` = ? WHERE `id`=?", updateQty, sid);
-//                    MySQL.iud("INSERT INTO `invoice_item` (`qty`,`invoice_id`,`stock_id`) VALUES (?,?,?)", qty, id, sid);
-                    MySQL.iud("INSERT INTO `invoice_item` (`qty`,`invoice_id`,`stock_id`,`selling_price`) VALUES (?,?,?,?)", qty, id, sid,selling_price);
-
-                    JOptionPane.showMessageDialog(this, "New Invoice created", "Success", JOptionPane.INFORMATION_MESSAGE);
-                    LOG.info("INFO:: add new invoice");
-                }
-
-                if (jCheckBox2.isSelected()) {
-                    
-//                    String path = "src//reports//canteen_invoice1.jasper";
-                    InputStream path = getClass().getResourceAsStream("/reports/canteen_invoice1.jasper");
-
-                    if (path == null) {
-                        JOptionPane.showMessageDialog(this, "Report Not found", "Warning", JOptionPane.WARNING_MESSAGE);
-
-                    } else {
-                        HashMap parameters = new HashMap();
-                        parameters.put("Parameter1", jLabel88.getText());
-
-                        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(v);
-
-                        JasperPrint jp = JasperFillManager.fillReport(path, parameters, dataSource);
-
-                        boolean printJobCompleted = JasperPrintManager.printReport(jp, false); // false for printing without showing print dialog
-
-                        if (!printJobCompleted) {
-                            LOG.info("INFO:: invoice printing failed.");
-                            JOptionPane.showMessageDialog(this, "Report printing failed", "Warning", JOptionPane.WARNING_MESSAGE);
-//                            System.out.println("Report printing failed.");
-                        } else {
-                            LOG.info("INFO:: invoice printed.");
-                            JOptionPane.showMessageDialog(this, "Report sent to printer.", "Success", JOptionPane.INFORMATION_MESSAGE);
-//                            System.out.println("Report sent to printer.");
-                        }
-//                        JasperViewer.viewReport(jp, false);
+                        MySQL.iud("UPDATE `stock` SET `quantity` = ? WHERE `id`=?", updateQty, sid);
+                        MySQL.iud("INSERT INTO `invoice_item` (`qty`,`invoice_id`,`stock_id`,`selling_price`) VALUES (?,?,?,?)", qty, id, sid, selling_price);
+                        LOG.info("INFO:: add new invoice");
                     }
 
-                }
-                
+//                    if (jCheckBox2.isSelected()) {
+                    try {
+                        InputStream path = getClass().getResourceAsStream("/reports/canteen_invoice1.jasper");
 
-                //payment
-                resetInvoice();
-                //payment
-                DefaultTableModel dtm = (DefaultTableModel) jTable7.getModel();
-                dtm.setRowCount(0);
-                //invoice item insert &stock insert/update
-            } catch (Exception e) {
-                e.printStackTrace();
-                LOG.error("ERROR:: add new invoice=" + e);
-            }
+                        if (path == null) {
+                            SwingUtilities.invokeLater(() -> {
+                                JOptionPane.showMessageDialog(this, "Report Not found", "Warning", JOptionPane.WARNING_MESSAGE);
+
+                            });
+
+                        } else {
+                            HashMap parameters = new HashMap();
+                            parameters.put("Parameter1", jLabel88.getText());
+
+                            JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(v);
+
+                            JasperPrint jp = JasperFillManager.fillReport(path, parameters, dataSource);
+
+                            int printCount = jCheckBox2.isSelected() ? 2 : 1;
+
+                            for (int i = 0; i < printCount; i++) {
+                                boolean printJobCompleted = JasperPrintManager.printReport(jp, false); // false for silent printing
+
+                                if (!printJobCompleted) {
+                                    LOG.info("INFO:: invoice printing failed.");
+                                    SwingUtilities.invokeLater(() -> {
+                                        JOptionPane.showMessageDialog(this, "Report printing failed", "Warning", JOptionPane.WARNING_MESSAGE);
+                                    });
+                                } else {
+                                    LOG.info("INFO:: invoice printed.");
+                                }
+                            }
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        LOG.error("ERROR:: add new invoice=" + e);
+                    }
+
+//                    }
+                    //payment
+                    SwingUtilities.invokeLater(() -> {
+                        resetInvoice();
+                        ((DefaultTableModel) jTable7.getModel()).setRowCount(0);
+
+                    });
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    LOG.error("ERROR:: add new invoice=" + e);
+                }
+            }).start();
+
         }
     }//GEN-LAST:event_jButton17ActionPerformed
 
@@ -5753,7 +6089,6 @@ public final class Home extends javax.swing.JFrame {
                     jComboBox11.setSelectedItem(0);
                     //payment
 
-                    JOptionPane.showMessageDialog(this, "Invoice item removed", "Success", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         }
@@ -5964,18 +6299,6 @@ public final class Home extends javax.swing.JFrame {
         numpad.setVisible(true);
     }//GEN-LAST:event_jTextField13MouseClicked
 
-    private void jPasswordField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordField1MouseClicked
-        // TODO add your handling code here:
-        KeyBoard keyBoard = new KeyBoard(this, true, jPasswordField1);
-        keyBoard.setVisible(true);
-    }//GEN-LAST:event_jPasswordField1MouseClicked
-
-    private void jPasswordField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordField3MouseClicked
-        // TODO add your handling code here:
-        KeyBoard keyBoard = new KeyBoard(this, true, jPasswordField3);
-        keyBoard.setVisible(true);
-    }//GEN-LAST:event_jPasswordField3MouseClicked
-
     private void jTextField15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField15MouseClicked
         // TODO add your handling code here:
         KeyBoard keyBoard = new KeyBoard(this, true, jTextField15);
@@ -6032,42 +6355,46 @@ public final class Home extends javax.swing.JFrame {
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
-        try {
+        new Thread(() -> {
+            try {
+
 //            String path = "src//reports//canteen_stock_report.jasper";
-            InputStream path = getClass().getResourceAsStream("/reports/canteen_stock_report.jasper");
+                InputStream path = getClass().getResourceAsStream("/reports/canteen_stock_report.jasper");
 
-            if (path == null) {
-                JOptionPane.showMessageDialog(this, "Report Not found", "Warning", JOptionPane.WARNING_MESSAGE);
+                if (path == null) {
+                    JOptionPane.showMessageDialog(this, "Report Not found", "Warning", JOptionPane.WARNING_MESSAGE);
 
-            } else {
-                Vector v = new Vector();
-                for (int i = 0; i < jTable5.getRowCount(); i++) {
-                    String id = jTable5.getValueAt(i, 0).toString();
-                    String name = jTable5.getValueAt(i, 5).toString();
-                    String category = jTable5.getValueAt(i, 3).toString();
-                    String brand = jTable5.getValueAt(i, 4).toString();
-                    String qty = jTable5.getValueAt(i, 6).toString();
-                    String buying_price = jTable5.getValueAt(i, 7).toString();
-                    String selling_price = jTable5.getValueAt(i, 8).toString();
-                    String mfd = jTable5.getValueAt(i, 9).toString();
-                    String exd = jTable5.getValueAt(i, 10).toString();
+                } else {
+                    Vector v = new Vector();
+                    for (int i = 0; i < jTable5.getRowCount(); i++) {
+                        String id = jTable5.getValueAt(i, 0).toString();
+                        String name = jTable5.getValueAt(i, 5).toString();
+                        String category = jTable5.getValueAt(i, 3).toString();
+                        String brand = jTable5.getValueAt(i, 4).toString();
+                        String qty = jTable5.getValueAt(i, 6).toString();
+                        String buying_price = jTable5.getValueAt(i, 7).toString();
+                        String selling_price = jTable5.getValueAt(i, 8).toString();
+                        String mfd = jTable5.getValueAt(i, 9).toString();
+                        String exd = jTable5.getValueAt(i, 10).toString();
 
-                    model.StockBean g1 = new model.StockBean(id, name, category, brand, qty, buying_price, selling_price, mfd, exd);
-                    v.add(g1);
+                        model.StockBean g1 = new model.StockBean(id, name, category, brand, qty, buying_price, selling_price, mfd, exd);
+                        v.add(g1);
+                    }
+
+                    JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(v);
+
+                    JasperPrint jp = JasperFillManager.fillReport(path, null, dataSource);
+                    JasperViewer.viewReport(jp, false);
+
+                    LOG.info("INFO:: print stock ");
                 }
 
-                JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(v);
-
-                JasperPrint jp = JasperFillManager.fillReport(path, null, dataSource);
-                JasperViewer.viewReport(jp, false);
-
-                LOG.info("INFO:: print stock ");
+            } catch (Exception e) {
+                e.printStackTrace();
+                LOG.error("ERROR:: print stock error=" + e);
             }
+        }).start();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            LOG.error("ERROR:: print stock error=" + e);
-        }
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton23MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton23MouseExited
@@ -6133,21 +6460,26 @@ public final class Home extends javax.swing.JFrame {
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
         // TODO add your handling code here:
-        loadInviocesTableCashSummary();
+
         jDateChooser7.setDate(null);
         jDateChooser8.setDate(null);
+        jComboBox12.setSelectedIndex(0);
         DefaultTableModel dtm = (DefaultTableModel) jTable9.getModel();
         dtm.setRowCount(0);
+        loadInviocesTableCashSummary();
+        loadInvoicesProductsByFiltersTableCashSummary();
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jDateChooser8PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooser8PropertyChange
         // TODO add your handling code here:
         loadInviocesTableByDatesCashSummary();
+        loadInvoicesProductsByFiltersTableCashSummary();
     }//GEN-LAST:event_jDateChooser8PropertyChange
 
     private void jDateChooser7PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooser7PropertyChange
         // TODO add your handling code here:
         loadInviocesTableByDatesCashSummary();
+        loadInvoicesProductsByFiltersTableCashSummary();
     }//GEN-LAST:event_jDateChooser7PropertyChange
 
     private void jButton27MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton27MouseExited
@@ -6312,6 +6644,10 @@ public final class Home extends javax.swing.JFrame {
                 details = "Invoices To " + dateTo + " 23:59:59'";
             }
 
+            if (jComboBox12.getSelectedItem().toString().equals("SELECT")) {
+                details += " (" + jComboBox12.getSelectedItem().toString() + ")";
+            }
+
 //                JOptionPane.showMessageDialog(this, "New GRN created, print grn", "Success", JOptionPane.INFORMATION_MESSAGE);
 //            String path = "src//reports//canteen_invoices.jasper";
             InputStream path = getClass().getResourceAsStream("/reports/canteen_invoices.jasper");
@@ -6373,12 +6709,226 @@ public final class Home extends javax.swing.JFrame {
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
         // TODO add your handling code here:
-        if(MySQL.backupDatabase()){
+        if (MySQL.backupDatabase()) {
             JOptionPane.showMessageDialog(this, "Backup Saved", "Success", JOptionPane.INFORMATION_MESSAGE);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "Backup save fail", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jButton31ActionPerformed
+
+    public void addToCartInvoicePanel(int selectedRow, String qty) {
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Please select a product", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else if (!Pattern.compile("[1-9][0-9]*").matcher(qty).matches()) {
+            JOptionPane.showMessageDialog(this, "Please enter quantity", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else {
+            try {
+                String sid = jTable6.getValueAt(selectedRow, 0).toString();
+                String pName = jTable6.getValueAt(selectedRow, 1).toString();
+                String sp = jTable6.getValueAt(selectedRow, 4).toString();
+
+//                ResultSet stock_rs = MySQL.search("SELECT * FROM `stock` WHERE `stock`.`id`=?", sid);
+//                stock_rs.next();
+//                String availableQty = stock_rs.getString("quantity");
+//                if (Integer.parseInt(availableQty) < Integer.parseInt(qty)) {
+//                    JOptionPane.showMessageDialog(this, "Quantity out of stock", "Warning", JOptionPane.WARNING_MESSAGE);
+//                } else {
+                DefaultTableModel dtm = (DefaultTableModel) jTable7.getModel();
+                boolean isFound = false;
+                int x = -1;
+                for (int i = 0; i < dtm.getRowCount(); i++) {
+                    String s = jTable7.getValueAt(i, 0).toString();
+                    if (s.equals(sid)) {
+                        isFound = true;
+                        x = i;
+                        break;
+                    }
+                }
+                //add
+                if (isFound) {
+                    int option = JOptionPane.showConfirmDialog(this, "This product is already added. Do you want to update?", "Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+                    if (option == JOptionPane.YES_OPTION) {
+                        int oldQty = Integer.parseInt(jTable7.getValueAt(x, 3).toString());
+                        int finalQty = oldQty + Integer.parseInt(qty);
+                        //check stock
+//                            if (Integer.parseInt(availableQty) < finalQty) {
+//                                JOptionPane.showMessageDialog(this, "Quantity out of stock", "Warning", JOptionPane.WARNING_MESSAGE);
+//                            } else {
+                        jTable7.setValueAt(String.valueOf(finalQty), x, 3);
+                        double updatedItemtotal = finalQty * Double.parseDouble(sp);
+                        jTable7.setValueAt(String.valueOf(updatedItemtotal), x, 4);
+                        updateInvoiceTotal();
+                        LOG.info("INFO:: invoice, update cart item");
+//                            }
+                        //check stock
+                    }
+//                        resetfields();
+                } else {
+                    Vector v = new Vector();
+                    v.add(sid);
+                    v.add(pName);
+                    v.add(sp);
+                    v.add(qty);
+                    double itemtotal = Integer.parseInt(qty) * Double.parseDouble(sp);
+                    v.add(df.format(itemtotal));
+                    dtm.addRow(v);
+                    updateInvoiceTotal();
+                    LOG.info("INFO:: invoice, add product to cart");
+
+//                        JOptionPane.showMessageDialog(this, "Product add to Invoice", "Success", JOptionPane.INFORMATION_MESSAGE);
+                }
+                jTextField27.setText("");
+//                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                LOG.error("ERROR:: invoice, add to cart error" + e);
+            }
+
+        }
+    }
+
+    private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable6.getSelectedRow();
+        String qty = "1";
+
+        addToCartInvoicePanel(selectedRow, qty);
+
+    }//GEN-LAST:event_jButton38ActionPerformed
+
+    private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable6.getSelectedRow();
+        String qty = "2";
+
+        addToCartInvoicePanel(selectedRow, qty);
+    }//GEN-LAST:event_jButton39ActionPerformed
+
+    private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable6.getSelectedRow();
+        String qty = "3";
+
+        addToCartInvoicePanel(selectedRow, qty);
+    }//GEN-LAST:event_jButton40ActionPerformed
+
+    private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable6.getSelectedRow();
+        String qty = "4";
+
+        addToCartInvoicePanel(selectedRow, qty);
+    }//GEN-LAST:event_jButton41ActionPerformed
+
+    private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable6.getSelectedRow();
+        String qty = "5";
+
+        addToCartInvoicePanel(selectedRow, qty);
+    }//GEN-LAST:event_jButton42ActionPerformed
+
+    private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable6.getSelectedRow();
+        String qty = "10";
+
+        addToCartInvoicePanel(selectedRow, qty);
+    }//GEN-LAST:event_jButton43ActionPerformed
+
+    private void jTextField29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField29MouseClicked
+        // TODO add your handling code here:
+        Numpad numpad = new Numpad(this, true, jTextField29);
+        numpad.setVisible(true);
+    }//GEN-LAST:event_jTextField29MouseClicked
+
+    private void jTextField30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField30MouseClicked
+        // TODO add your handling code here:
+        Numpad numpad = new Numpad(this, true, jTextField30);
+        numpad.setVisible(true);
+    }//GEN-LAST:event_jTextField30MouseClicked
+
+    private void jComboBox12ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox12ItemStateChanged
+        // TODO add your handling code here:
+        loadInviocesTableByDatesCashSummary();
+        loadInvoicesProductsByFiltersTableCashSummary();
+    }//GEN-LAST:event_jComboBox12ItemStateChanged
+
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+        // TODO add your handling code here:
+        try {
+
+            String dateFrom = null;
+            String dateTo = null;
+
+            if (jDateChooser7.getDate() != null) {
+                dateFrom = sdf.format(jDateChooser7.getDate());
+            }
+            if (jDateChooser8.getDate() != null) {
+                dateTo = sdf.format(jDateChooser8.getDate());
+            }
+
+            // Base query
+            String details = "All Products Results";
+
+            // Add date conditions
+            if (dateFrom != null && dateTo != null) {
+                details = "Products From " + dateFrom + " 00:00:00' To '" + dateTo + " 23:59:59'";
+            } else if (dateFrom != null) {
+                details = "Products From " + dateFrom + " 00:00:00'";
+            } else if (dateTo != null) {
+                details = "Products To " + dateTo + " 23:59:59'";
+            }
+
+            if (jComboBox12.getSelectedItem().toString().equals("SELECT")) {
+                details += " (" + jComboBox12.getSelectedItem().toString() + ")";
+            }
+
+            InputStream path = getClass().getResourceAsStream("/reports/canteen_product_invoices.jasper");
+
+            if (path == null) {
+                JOptionPane.showMessageDialog(this, "Report Not found", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            } else {
+                double finalTotal = 0;
+
+                Vector v = new Vector();
+                for (int i = 0; i < jTable12.getRowCount(); i++) {
+                    String id = jTable12.getValueAt(i, 0).toString();
+                    String product_name = jTable12.getValueAt(i, 1).toString();
+                    String qty = jTable12.getValueAt(i, 2).toString();
+                    String selling_price = jTable12.getValueAt(i, 3).toString();
+                    String total = jTable12.getValueAt(i, 4).toString();
+
+                    double totalValue = Double.parseDouble(total);
+                    finalTotal += totalValue;
+
+                    model.InvoicesProductsreportBean g1 = new model.InvoicesProductsreportBean(id, product_name, qty, selling_price, total);
+                    v.add(g1);
+                }
+
+                HashMap parameters = new HashMap();
+                parameters.put("Parameter1", details);
+                parameters.put("Parameter2", String.format("%.2f", finalTotal));
+
+                JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(v);
+
+                JasperPrint jp = JasperFillManager.fillReport(path, parameters, dataSource);
+                JasperViewer.viewReport(jp, false);
+
+                LOG.info("INFO:: invoice products history, print invoice list");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            LOG.error("ERROR:: invoice products history, print invoice list, error : " + e);
+        }
+    }//GEN-LAST:event_jButton32ActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -6446,7 +6996,14 @@ public final class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
+    private javax.swing.JButton jButton38;
+    private javax.swing.JButton jButton39;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton40;
+    private javax.swing.JButton jButton41;
+    private javax.swing.JButton jButton42;
+    private javax.swing.JButton jButton43;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
@@ -6457,6 +7014,7 @@ public final class Home extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;
+    private javax.swing.JComboBox<String> jComboBox12;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
@@ -6477,6 +7035,7 @@ public final class Home extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDateChooser9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
@@ -6565,6 +7124,9 @@ public final class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
@@ -6591,17 +7153,17 @@ public final class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel40;
+    private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -6615,6 +7177,7 @@ public final class Home extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable10;
     private javax.swing.JTable jTable11;
+    private javax.swing.JTable jTable12;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
@@ -6644,7 +7207,9 @@ public final class Home extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField27;
     public javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;

@@ -402,9 +402,9 @@ public class Numpad extends javax.swing.JDialog {
             }
         });
 
-        jButton42.setBackground(new java.awt.Color(51, 51, 51));
+        jButton42.setBackground(new java.awt.Color(211, 211, 211));
         jButton42.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jButton42.setForeground(new java.awt.Color(211, 211, 211));
+        jButton42.setForeground(new java.awt.Color(51, 51, 51));
         jButton42.setText("OK");
         jButton42.setContentAreaFilled(false);
         jButton42.setOpaque(true);
@@ -794,12 +794,12 @@ public class Numpad extends javax.swing.JDialog {
 
     private void jButton42MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton42MouseEntered
         // TODO add your handling code here:
-        jButton42.setBackground(new Color(0, 140, 186));
+        jButton42.setBackground(new Color(140, 140, 140));
     }//GEN-LAST:event_jButton42MouseEntered
 
     private void jButton42MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton42MouseExited
         // TODO add your handling code here:
-        jButton42.setBackground(new Color(51, 51, 51));
+        jButton42.setBackground(new Color(211,211,211));
     }//GEN-LAST:event_jButton42MouseExited
 
     private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed

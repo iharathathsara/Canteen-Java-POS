@@ -1,0 +1,275 @@
+17-02-2025 18:07:12 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:07:14 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:07:14 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:07:14 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:07:14 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:07:14 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:07:14 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:07:14 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:07:14 INFO  Home:70: INFO:: run home
+17-02-2025 18:07:14 ERROR Home:123: ERROR:: get logged user data error
+17-02-2025 18:07:17 INFO  Home:859: INFO:: Invoice load category combo box
+17-02-2025 18:07:17 INFO  Home:876: INFO:: Invoice load product table
+17-02-2025 18:07:17 INFO  Home:836: INFO:: Invoice load payment types
+17-02-2025 18:07:22 INFO  Home:5582: INFO:: invoice, add product to cart
+17-02-2025 18:07:33 INFO  Home:5582: INFO:: invoice, add product to cart
+17-02-2025 18:16:12 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:16:13 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:16:13 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:16:13 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:16:13 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:16:13 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:16:13 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:16:13 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:16:13 INFO  Home:70: INFO:: run home
+17-02-2025 18:16:14 ERROR Home:123: ERROR:: get logged user data error
+17-02-2025 18:16:15 INFO  Home:859: INFO:: Invoice load category combo box
+17-02-2025 18:16:15 INFO  Home:876: INFO:: Invoice load product table
+17-02-2025 18:16:15 INFO  Home:836: INFO:: Invoice load payment types
+17-02-2025 18:22:10 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:22:11 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:22:11 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:22:11 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:22:11 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:22:11 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:22:11 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:22:11 INFO  Home:158: INFO:: search Stock
+17-02-2025 18:22:11 INFO  Home:70: INFO:: run home
+17-02-2025 18:22:11 ERROR Home:123: ERROR:: get logged user data error
+17-02-2025 18:22:13 INFO  Home:859: INFO:: Invoice load category combo box
+17-02-2025 18:22:13 INFO  Home:876: INFO:: Invoice load product table
+17-02-2025 18:22:13 INFO  Home:836: INFO:: Invoice load payment types
+17-02-2025 18:25:41 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:25:42 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:25:42 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:25:42 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:25:42 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:25:42 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:25:42 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:25:42 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:25:42 INFO  Home:70: INFO:: run home
+17-02-2025 18:25:42 ERROR Home:121: ERROR:: get logged user data error
+17-02-2025 18:25:45 INFO  Home:857: INFO:: Invoice load category combo box
+17-02-2025 18:25:45 INFO  Home:874: INFO:: Invoice load product table
+17-02-2025 18:25:45 INFO  Home:834: INFO:: Invoice load payment types
+17-02-2025 18:25:50 INFO  Home:6527: INFO:: invoice, add product to cart
+17-02-2025 18:25:54 INFO  Home:6512: INFO:: invoice, update cart item
+17-02-2025 18:26:00 INFO  Home:6527: INFO:: invoice, add product to cart
+17-02-2025 18:26:03 INFO  Home:6512: INFO:: invoice, update cart item
+17-02-2025 18:40:30 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:40:31 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:40:31 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:40:31 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:40:31 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:40:31 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:40:31 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:40:31 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:40:31 INFO  Home:70: INFO:: run home
+17-02-2025 18:40:32 ERROR Home:121: ERROR:: get logged user data error
+17-02-2025 18:40:41 INFO  Login:33: INFO:: run login
+17-02-2025 18:41:02 WARN  Login:257: WARNING:: Invalid login email:ihara@gnail.com
+17-02-2025 18:41:18 WARN  Login:257: WARNING:: Invalid login email:iharathathsara0@gnail.com
+17-02-2025 18:53:49 WARN  Login:257: WARNING:: Invalid login email:ihara@gmail.com
+17-02-2025 18:53:53 INFO  Login:250: INFO:: login success email:ihara@gmail.com
+17-02-2025 18:53:54 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:53:54 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:53:54 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:53:54 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:53:54 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:53:54 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:53:54 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:53:54 INFO  Home:156: INFO:: search Stock
+17-02-2025 18:53:54 INFO  Home:70: INFO:: run home
+17-02-2025 18:53:54 INFO  Home:104: INFO:: get logged user data success
+17-02-2025 18:53:56 INFO  Home:857: INFO:: Invoice load category combo box
+17-02-2025 18:53:56 INFO  Home:874: INFO:: Invoice load product table
+17-02-2025 18:53:56 INFO  Home:834: INFO:: Invoice load payment types
+17-02-2025 18:53:58 INFO  Home:6493: INFO:: invoice, add product to cart
+17-02-2025 18:54:01 INFO  Home:6493: INFO:: invoice, add product to cart
+17-02-2025 18:54:09 INFO  Home:829: INFO:: Invoice calculate balance
+17-02-2025 18:54:15 INFO  Home:829: INFO:: Invoice calculate balance
+17-02-2025 18:54:17 INFO  Home:829: INFO:: Invoice calculate balance
+17-02-2025 18:54:18 INFO  Home:829: INFO:: Invoice calculate balance
+17-02-2025 18:54:18 INFO  Home:829: INFO:: Invoice calculate balance
+17-02-2025 18:54:18 INFO  Home:829: INFO:: Invoice calculate balance
+17-02-2025 18:54:20 INFO  Home:5725: INFO:: add new invoice
+17-02-2025 18:54:25 INFO  Home:5725: INFO:: add new invoice
+17-02-2025 18:54:30 INFO  Home:5751: INFO:: invoice printed.
+17-02-2025 18:54:42 INFO  Home:857: INFO:: Invoice load category combo box
+17-02-2025 18:54:42 INFO  Home:874: INFO:: Invoice load product table
+17-02-2025 18:54:42 INFO  Home:834: INFO:: Invoice load payment types
+17-02-2025 18:54:42 INFO  Home:811: INFO:: Invoice reset panel
+17-02-2025 18:55:35 INFO  Login:33: INFO:: run login
+17-02-2025 18:55:51 INFO  Login:250: INFO:: login success email:ihara@gmail.com
+17-02-2025 18:55:52 INFO  Home:157: INFO:: search Stock
+17-02-2025 18:55:52 INFO  Home:157: INFO:: search Stock
+17-02-2025 18:55:52 INFO  Home:157: INFO:: search Stock
+17-02-2025 18:55:52 INFO  Home:157: INFO:: search Stock
+17-02-2025 18:55:52 INFO  Home:157: INFO:: search Stock
+17-02-2025 18:55:52 INFO  Home:157: INFO:: search Stock
+17-02-2025 18:55:52 INFO  Home:157: INFO:: search Stock
+17-02-2025 18:55:52 INFO  Home:157: INFO:: search Stock
+17-02-2025 18:55:52 INFO  Home:71: INFO:: run home
+17-02-2025 18:55:52 INFO  Home:105: INFO:: get logged user data success
+17-02-2025 18:55:53 INFO  Home:858: INFO:: Invoice load category combo box
+17-02-2025 18:55:53 INFO  Home:875: INFO:: Invoice load product table
+17-02-2025 18:55:53 INFO  Home:835: INFO:: Invoice load payment types
+17-02-2025 18:55:55 INFO  Home:6500: INFO:: invoice, add product to cart
+17-02-2025 18:55:58 INFO  Home:830: INFO:: Invoice calculate balance
+17-02-2025 18:55:59 INFO  Home:5726: INFO:: add new invoice
+17-02-2025 18:56:00 INFO  Home:5754: INFO:: invoice printed.
+17-02-2025 18:56:00 INFO  Home:812: INFO:: Invoice reset panel
+17-02-2025 21:01:06 INFO  Login:33: INFO:: run login
+17-02-2025 21:01:23 INFO  Login:250: INFO:: login success email:ihara@gmail.com
+17-02-2025 21:01:24 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:01:24 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:01:24 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:01:24 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:01:24 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:01:24 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:01:24 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:01:24 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:01:24 INFO  Home:71: INFO:: run home
+17-02-2025 21:01:24 INFO  Home:105: INFO:: get logged user data success
+17-02-2025 21:01:30 INFO  Home:858: INFO:: Invoice load category combo box
+17-02-2025 21:01:30 INFO  Home:875: INFO:: Invoice load product table
+17-02-2025 21:01:30 INFO  Home:835: INFO:: Invoice load payment types
+17-02-2025 21:01:34 INFO  Home:6505: INFO:: invoice, add product to cart
+17-02-2025 21:01:35 INFO  Home:6505: INFO:: invoice, add product to cart
+17-02-2025 21:01:42 INFO  Home:830: INFO:: Invoice calculate balance
+17-02-2025 21:01:42 INFO  Home:5722: INFO:: add new invoice
+17-02-2025 21:01:42 INFO  Home:5722: INFO:: add new invoice
+17-02-2025 21:01:42 INFO  Home:812: INFO:: Invoice reset panel
+17-02-2025 21:01:47 INFO  Home:5754: INFO:: invoice printed.
+17-02-2025 21:06:04 INFO  Home:6414: INFO:: invoice history, print invoice list
+17-02-2025 21:40:21 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:22 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:22 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:22 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:22 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:22 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:22 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:22 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:23 INFO  Home:71: INFO:: run home
+17-02-2025 21:40:23 ERROR Home:122: ERROR:: get logged user data error
+17-02-2025 21:40:52 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:53 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:53 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:53 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:53 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:53 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:53 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:53 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:40:54 INFO  Home:71: INFO:: run home
+17-02-2025 21:40:54 ERROR Home:122: ERROR:: get logged user data error
+17-02-2025 21:40:55 INFO  Home:950: INFO:: invoice history load user combo box
+17-02-2025 21:41:14 INFO  Home:742: INFO:: User Manage load Users Types
+17-02-2025 21:41:14 INFO  Home:759: INFO:: User Manage load Users Types search Combobox
+17-02-2025 21:41:14 INFO  Home:776: INFO:: User Manage load Users Status search Combobox
+17-02-2025 21:41:14 INFO  Home:693: INFO:: User Manage load Users Table
+17-02-2025 21:42:44 INFO  Login:33: INFO:: run login
+17-02-2025 21:43:00 INFO  Login:250: INFO:: login success email:ihara@gmail.com
+17-02-2025 21:43:01 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:43:01 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:43:01 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:43:01 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:43:02 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:43:02 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:43:02 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:43:02 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:43:02 INFO  Home:71: INFO:: run home
+17-02-2025 21:43:02 INFO  Home:105: INFO:: get logged user data success
+17-02-2025 21:43:03 INFO  Home:742: INFO:: User Manage load Users Types
+17-02-2025 21:43:03 INFO  Home:759: INFO:: User Manage load Users Types search Combobox
+17-02-2025 21:43:03 INFO  Home:776: INFO:: User Manage load Users Status search Combobox
+17-02-2025 21:43:03 INFO  Home:693: INFO:: User Manage load Users Table
+17-02-2025 21:43:49 INFO  Home:732: INFO:: User Manage clear
+17-02-2025 21:43:49 INFO  Home:693: INFO:: User Manage load Users Table
+17-02-2025 21:43:49 INFO  Home:4866: INFO:: save new user iniq id = U_1739808827952336 , email = abc@gmail.com
+17-02-2025 21:43:57 INFO  Login:33: INFO:: run login
+17-02-2025 21:43:57 INFO  Home:6461: INFO:: log out success
+17-02-2025 21:43:57 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:43:57 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:43:57 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:43:57 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:44:19 INFO  Login:250: INFO:: login success email:ABC@GMAIL.COM
+17-02-2025 21:44:19 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:44:19 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:44:19 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:44:19 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:44:19 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:44:19 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:44:19 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:44:19 INFO  Home:157: INFO:: search Stock
+17-02-2025 21:44:19 INFO  Home:71: INFO:: run home
+17-02-2025 21:44:19 INFO  Home:105: INFO:: get logged user data success
+17-02-2025 21:44:24 INFO  Home:950: INFO:: invoice history load user combo box
+17-02-2025 21:44:28 INFO  Home:858: INFO:: Invoice load category combo box
+17-02-2025 21:44:28 INFO  Home:875: INFO:: Invoice load product table
+17-02-2025 21:44:28 INFO  Home:835: INFO:: Invoice load payment types
+17-02-2025 21:44:35 INFO  Home:130: INFO:: load Stock
+17-02-2025 21:44:35 INFO  Home:350: INFO:: Load Brand Combo Box Stock
+17-02-2025 21:44:35 INFO  Home:367: INFO:: Load Category Combo Box Stock
+17-02-2025 21:44:35 INFO  Home:320: INFO:: Load Stock Table
+17-02-2025 21:44:53 INFO  Home:858: INFO:: Invoice load category combo box
+17-02-2025 21:44:53 INFO  Home:875: INFO:: Invoice load product table
+17-02-2025 21:44:53 INFO  Home:835: INFO:: Invoice load payment types
+17-02-2025 21:44:54 INFO  Home:6532: INFO:: invoice, add product to cart
+17-02-2025 21:44:58 INFO  Home:830: INFO:: Invoice calculate balance
+17-02-2025 21:44:59 INFO  Home:5762: INFO:: add new invoice
+17-02-2025 21:44:59 INFO  Home:812: INFO:: Invoice reset panel
+17-02-2025 21:45:02 INFO  Home:5794: INFO:: invoice printed.
+17-02-2025 21:45:15 INFO  Home:6532: INFO:: invoice, add product to cart
+17-02-2025 21:45:22 INFO  Home:830: INFO:: Invoice calculate balance
+17-02-2025 21:45:23 INFO  Home:5762: INFO:: add new invoice
+17-02-2025 21:45:23 INFO  Home:812: INFO:: Invoice reset panel
+17-02-2025 21:45:23 INFO  Home:5794: INFO:: invoice printed.
+17-02-2025 21:45:38 INFO  Home:950: INFO:: invoice history load user combo box
+17-02-2025 22:02:27 INFO  Login:33: INFO:: run login
+17-02-2025 22:02:49 INFO  Login:250: INFO:: login success email:ihara@gmail.com
+17-02-2025 22:02:50 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:02:50 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:02:50 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:02:50 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:02:50 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:02:50 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:02:50 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:02:50 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:02:51 INFO  Home:71: INFO:: run home
+17-02-2025 22:02:51 INFO  Home:105: INFO:: get logged user data success
+17-02-2025 22:02:53 INFO  Home:950: INFO:: invoice history load user combo box
+17-02-2025 22:18:23 INFO  Login:33: INFO:: run login
+17-02-2025 22:18:43 INFO  Login:250: INFO:: login success email:ihara@gmail.com
+17-02-2025 22:18:44 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:18:44 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:18:44 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:18:44 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:18:44 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:18:44 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:18:44 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:18:44 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:18:45 INFO  Home:71: INFO:: run home
+17-02-2025 22:18:45 INFO  Home:105: INFO:: get logged user data success
+17-02-2025 22:18:58 INFO  Home:950: INFO:: invoice history load user combo box
+17-02-2025 22:19:14 INFO  Home:6474: INFO:: invoice history, print invoice list
+17-02-2025 22:19:24 INFO  Home:6474: INFO:: invoice history, print invoice list
+17-02-2025 22:19:40 INFO  Home:6474: INFO:: invoice history, print invoice list
+17-02-2025 22:20:38 INFO  Login:33: INFO:: run login
+17-02-2025 22:20:54 INFO  Login:250: INFO:: login success email:ihara@gmail.com
+17-02-2025 22:20:55 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:20:55 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:20:55 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:20:55 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:20:56 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:20:56 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:20:56 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:20:56 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:20:57 INFO  Home:71: INFO:: run home
+17-02-2025 22:20:57 INFO  Home:105: INFO:: get logged user data success
+17-02-2025 22:20:58 INFO  Home:950: INFO:: invoice history load user combo box
+17-02-2025 22:21:24 INFO  Login:33: INFO:: run login
+17-02-2025 22:21:24 INFO  Home:6497: INFO:: log out success
+17-02-2025 22:21:24 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:21:24 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:21:24 INFO  Home:157: INFO:: search Stock
+17-02-2025 22:21:24 INFO  Home:157: INFO:: search Stock
